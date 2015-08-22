@@ -76,6 +76,8 @@ GameObject:
   - 124: {fileID: 12468510}
   - 92: {fileID: 9232004}
   - 81: {fileID: 8111448}
+  - 45: {fileID: 4578442}
+  - 114: {fileID: 11442600}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -135,7 +137,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 176410}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .449999988, z: -6}
+  m_LocalPosition: {x: 0, y: .239999995, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 484034}
@@ -199,7 +201,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 64.0100021
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -242,6 +244,14 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178250}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!45 &4578442
+Skybox:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176410}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: ab675e6698bde46fd87143fb0d7580cb, type: 2}
 --- !u!65 &6510954
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -283,7 +293,8 @@ MonoBehaviour:
   offsetAccel: 10
   offsetDecay: .949999988
   offsetDeadZone: .00999999978
-  offset: 0
+  offset: {x: 0, y: 0, z: 0}
+  verticalCameraOffset: .5
 --- !u!114 &11423568
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -347,16 +358,12 @@ MonoBehaviour:
       InstanceTarget: {fileID: 423480}
     - LIIF: 2025399454
       InstanceTarget: {fileID: 176410}
+    - LIIF: 1907284045
+      InstanceTarget: {fileID: 11442600}
+    - LIIF: -1009227582
+      InstanceTarget: {fileID: 4578442}
   Modifications:
-    Modificated:
-    - Object: {fileID: 11405472}
-      ObjeckLink: -1687692026
-      PropertyPath: maxOffset
-      Mode: 0
-    - Object: {fileID: 11405472}
-      ObjeckLink: -1687692026
-      PropertyPath: offsetAccel
-      Mode: 0
+    Modificated: []
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -400,6 +407,10 @@ MonoBehaviour:
       InstanceTarget: {fileID: 423480}
     - LIIF: 474759903
       InstanceTarget: {fileID: 176410}
+    - LIIF: -1853659070
+      InstanceTarget: {fileID: 11442600}
+    - LIIF: -1081279772
+      InstanceTarget: {fileID: 4578442}
   Modifications:
     Modificated:
     - Object: {fileID: 484034}
@@ -412,6 +423,35 @@ MonoBehaviour:
     TransformParentChanges: []
   ParentPrefabGUID: 
   PrefabGUID: 9a14ced7e0ca3b845980f30ab9abd57a
+--- !u!114 &11442600
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 176410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd70d448b18cfbc46af26466f752332c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualizeFocus: 0
+  focalLength: 10
+  focalSize: 1.70000005
+  aperture: 24
+  focalTransform: {fileID: 0}
+  maxBlurSize: 2
+  highResolution: 0
+  blurType: 0
+  blurSampleCount: 2
+  nearBlur: 0
+  foregroundOverlap: 1
+  dofHdrShader: {fileID: 4800000, guid: acd613035ff3e455e8abf23fdc8c8c24, type: 3}
+  dx11BokehShader: {fileID: 4800000, guid: d8e82664aa8686642a424c88ab10164a, type: 3}
+  dx11BokehThreshold: .5
+  dx11SpawnHeuristic: .0874999985
+  dx11BokehTexture: {fileID: 2800000, guid: a4cdca73d61814d33ac1587f6c163bca, type: 3}
+  dx11BokehScale: 1.20000005
+  dx11BokehIntensity: 2.5
 --- !u!114 &11488790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -427,7 +467,9 @@ MonoBehaviour:
   accel: 3
   decay: .970000029
   deadZone: .00499999989
-  velocity: 0
+  xVelocity: 0
+  gravity: .150000006
+  jumpPower: .5
 --- !u!124 &12468510
 Behaviour:
   m_ObjectHideFlags: 1

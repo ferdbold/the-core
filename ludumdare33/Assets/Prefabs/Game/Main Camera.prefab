@@ -29,6 +29,8 @@ GameObject:
   - 124: {fileID: 12487998}
   - 92: {fileID: 9233748}
   - 81: {fileID: 8135796}
+  - 45: {fileID: 4510026}
+  - 114: {fileID: 11481310}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -56,7 +58,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: .449999988, z: -6}
+  m_LocalPosition: {x: 0, y: .239999995, z: -6}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 450292}
@@ -82,7 +84,7 @@ Camera:
   field of view: 60
   orthographic: 0
   orthographic size: 5
-  m_Depth: 0
+  m_Depth: 64.0100021
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -94,6 +96,14 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
   m_StereoMirrorMode: 0
+--- !u!45 &4510026
+Skybox:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158662}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: ab675e6698bde46fd87143fb0d7580cb, type: 2}
 --- !u!81 &8135796
 AudioListener:
   m_ObjectHideFlags: 1
@@ -108,6 +118,35 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 158662}
   m_Enabled: 1
+--- !u!114 &11481310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd70d448b18cfbc46af26466f752332c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visualizeFocus: 0
+  focalLength: 10
+  focalSize: 1.70000005
+  aperture: 24
+  focalTransform: {fileID: 0}
+  maxBlurSize: 2
+  highResolution: 0
+  blurType: 0
+  blurSampleCount: 2
+  nearBlur: 0
+  foregroundOverlap: 1
+  dofHdrShader: {fileID: 4800000, guid: acd613035ff3e455e8abf23fdc8c8c24, type: 3}
+  dx11BokehShader: {fileID: 4800000, guid: d8e82664aa8686642a424c88ab10164a, type: 3}
+  dx11BokehThreshold: .5
+  dx11SpawnHeuristic: .0874999985
+  dx11BokehTexture: {fileID: 2800000, guid: a4cdca73d61814d33ac1587f6c163bca, type: 3}
+  dx11BokehScale: 1.20000005
+  dx11BokehIntensity: 2.5
 --- !u!114 &11485044
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -145,19 +184,19 @@ MonoBehaviour:
       InstanceTarget: {fileID: 459462}
     - LIIF: 474759903
       InstanceTarget: {fileID: 158662}
+    - LIIF: -1853659070
+      InstanceTarget: {fileID: 11481310}
+    - LIIF: -1081279772
+      InstanceTarget: {fileID: 4510026}
   Modifications:
     Modificated:
     - Object: {fileID: 450292}
       ObjeckLink: -1881393719
       PropertyPath: m_RootOrder
       Mode: 0
-    - Object: {fileID: 11494636}
-      ObjeckLink: -1541528658
-      PropertyPath: maxOffset
-      Mode: 0
-    - Object: {fileID: 11494636}
-      ObjeckLink: -1541528658
-      PropertyPath: offsetAccel
+    - Object: {fileID: 11481310}
+      ObjeckLink: -1853659070
+      PropertyPath: focalTransform
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
@@ -180,7 +219,8 @@ MonoBehaviour:
   offsetAccel: 10
   offsetDecay: .949999988
   offsetDeadZone: .00999999978
-  offset: 0
+  offset: {x: 0, y: 0, z: 0}
+  verticalCameraOffset: .5
 --- !u!124 &12487998
 Behaviour:
   m_ObjectHideFlags: 1
