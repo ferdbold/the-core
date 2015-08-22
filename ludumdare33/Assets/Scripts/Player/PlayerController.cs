@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour {
 	void Update() {
         ApplyMoveInput();
         ApplyJumpInput();
+        ApplyProjectileFire();
 	}
 
     private void ApplyMoveInput() {
@@ -41,6 +42,14 @@ public class PlayerController : MonoBehaviour {
 
         if (jumpButton) {
             _character.Jump();
+        }
+    }
+
+    private void ApplyProjectileFire() {
+        bool fireButton = Input.GetButtonDown("Fire");
+
+        if (fireButton) {
+            _character.Fire();
         }
     }
 }

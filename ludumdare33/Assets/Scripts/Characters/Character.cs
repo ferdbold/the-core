@@ -1,15 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
+using DG.Tweening;
 
 public class Character : MonoBehaviour {
-
-    /* COMPONENTS */
-
-    private Transform _pivot;
-    private Transform _pawn;
-
-    /* ATTRIBUTES */
-    private float _pawnDistToGround;
 
     /* PUBLIC ATTRIBUTES */
 
@@ -24,6 +17,22 @@ public class Character : MonoBehaviour {
     public float gravity = 0.15f;
     public float jumpPower = 0.5f;
 
+    [Header("Fire")]
+    public Transform projectilePrefab;
+    public float fireAnimKickback = 0.7f;
+    public float fireAnimDuration = 0.3f;
+
+    /* COMPONENTS */
+
+    private Transform _pivot;
+    private Transform _pawn;
+
+    /* ATTRIBUTES */
+
+    private float _pawnDistToGround;
+    private float _initialPawnZ;
+    private float _pawnZ;
+
     /* CONSTRUCTOR */
 
     void Awake() {
@@ -35,6 +44,8 @@ public class Character : MonoBehaviour {
 
         _pivot = transform.Find("Pivot");
         _pawn = _pivot.Find("Pawn");
+        _pawnZ = _pawn.localPosition.z;
+        _initialPawnZ = _pawnZ;
 
         pawnCollider = _pawn.GetComponent<Collider>();
         _pawnDistToGround = pawnCollider.bounds.extents.y;
@@ -44,6 +55,7 @@ public class Character : MonoBehaviour {
 
     public virtual void Update() {
         Move();
+        ApplyFireAnimation();
 	}
 
     /// <summary>
@@ -79,6 +91,27 @@ public class Character : MonoBehaviour {
             Rigidbody pawnRb = _pawn.GetComponent<Rigidbody>();
             pawnRb.AddForce(transform.up * this.jumpPower);
         }
+    }
+
+    /// <summary>
+    /// Fire a projectile.
+    /// </summary>
+    public void Fire() {
+        Instantiate(this.projectilePrefab, _pawn.position, _pawn.rotation);
+
+        
+        DOTween.To(x => _pawnZ = x, _initialPawnZ - this.fireAnimKickback, _initialPawnZ, this.fireAnimDuration);
+    }
+
+    /// <summary>
+    /// Apply attack anim kickback.
+    /// </summary>
+    private void ApplyFireAnimation() {
+        _pawn.localPosition = new Vector3(
+            _pawn.localPosition.x,
+            _pawn.localPosition.y,
+            _pawnZ
+        );
     }
 
     /* PROPERTIES */

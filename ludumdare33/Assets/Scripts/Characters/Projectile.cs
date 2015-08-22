@@ -3,13 +3,16 @@ using System.Collections;
 
 public class Projectile : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+    /* PUBLIC ATTRIBUTES */
+    
+    public int enemyLayer;
+    public float moveSpeed = 2.0f;
 	
-	}
-	
-	// Update is called once per frame
 	void Update () {
-	
+        Move();
 	}
+
+    private void Move() {
+        transform.Translate(Vector3.forward * this.moveSpeed * Time.deltaTime);
+    }
 }
