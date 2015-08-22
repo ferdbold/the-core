@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour {
     }
 	
     /* METHODS */
-	void FixedUpdate() {
+	void Update() {
         ApplyMoveInput();
 	}
 
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour {
 
         if (horizontalAxis != 0) {
             _character.ApplyMoveFactor(horizontalAxis);
-            _camera.SetOffset(horizontalAxis);
+            _camera.ApplyOffsetFactor(horizontalAxis);
         }
     }
 }

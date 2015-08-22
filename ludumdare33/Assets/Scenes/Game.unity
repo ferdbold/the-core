@@ -172,6 +172,10 @@ Prefab:
       propertyPath: offsetWeight
       value: .300000012
       objectReference: {fileID: 0}
+    - target: {fileID: 11452854, guid: 31a9fb8d0fffe584dad54e40f44978d2, type: 2}
+      propertyPath: offsetAccel
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31a9fb8d0fffe584dad54e40f44978d2, type: 2}
   m_IsPrefabParent: 0

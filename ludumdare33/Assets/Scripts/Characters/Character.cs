@@ -11,7 +11,7 @@ public class Character : MonoBehaviour {
     public float maxSpeed = 5.0f;
     public float accel = 3.0f;
     public float decay = 0.95f;
-    public float deadZone = 0.005f;
+    public float deadZone = 0.01f;
     public float velocity;
 
     /* CONSTRUCTOR */
@@ -26,7 +26,6 @@ public class Character : MonoBehaviour {
 	
     /* METHODS */
     public virtual void Update() {
-        Debug.Log("Update");
         Move();
 	}
 
@@ -35,10 +34,9 @@ public class Character : MonoBehaviour {
     /// </summary>
     /// <param name="factor">The move factor. Ranges from -1 to 1 to move from left to right respectively.</param>
     public void ApplyMoveFactor(float factor) {
-        float moveAmount = -factor * accel * Time.deltaTime;
+        float moveAmount = -factor * this.accel * Time.deltaTime;
 
-        this.velocity = Mathf.Clamp(this.velocity + moveAmount, -maxSpeed, maxSpeed);
-        Debug.Log("ApplyMoveFactor: " + this.velocity.ToString());
+        this.velocity = Mathf.Clamp(this.velocity + moveAmount, -this.maxSpeed, this.maxSpeed);
     }
 
     /// <summary>
@@ -46,8 +44,7 @@ public class Character : MonoBehaviour {
     /// </summary>
     private void Move() {
         // Decay the velocity
-        Debug.Log("Move: " + this.velocity.ToString() + " // Decay: " + this.decay.ToString());
-        this.velocity = this.velocity * this.decay;
+        this.velocity *= this.decay;
 
         // Kill velocity if it's beneath the deadzone
         this.velocity = (Mathf.Abs(this.velocity) > this.deadZone) ? this.velocity : 0;
