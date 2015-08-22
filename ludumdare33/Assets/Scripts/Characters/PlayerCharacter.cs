@@ -8,8 +8,7 @@ public class PlayerCharacter : Character {
 
 	}
 
-    /* METHODS */
-    void Update () {
-
-	}
+    public override void Update() {
+        base.Update();
+    }
 }

@@ -172,18 +172,12 @@ MonoBehaviour:
       InstanceTarget: {fileID: 11445414}
   Modifications:
     Modificated:
-    - Object: {fileID: 420346}
-      ObjeckLink: -1056975555
-      PropertyPath: m_LocalRotation
-      Mode: 0
     - Object: {fileID: 412256}
       ObjeckLink: 1649427324
       PropertyPath: m_RootOrder
       Mode: 0
     NonPrefabObjects: []
-    NonPrefabComponents:
-    - child: {fileID: 11445414}
-      parent: {fileID: 137024}
+    NonPrefabComponents: []
     RemovedObjects: 
     TransformParentChanges: []
   ParentPrefabGUID: 

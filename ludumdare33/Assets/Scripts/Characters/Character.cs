@@ -8,10 +8,14 @@ public class Character : MonoBehaviour {
     private Transform _pawn;
 
     /* PUBLIC ATTRIBUTES */
-    public float moveSpeed = 1.0f;
+    public float maxSpeed = 5.0f;
+    public float accel = 3.0f;
+    public float decay = 0.95f;
+    public float deadZone = 0.005f;
+    public float velocity;
 
     /* CONSTRUCTOR */
-    void Awake () {
+    void Awake() {
         FindComponents();
 	}
 
@@ -21,17 +25,34 @@ public class Character : MonoBehaviour {
     }
 	
     /* METHODS */
-    void Update () {
-	    
+    public virtual void Update() {
+        Debug.Log("Update");
+        Move();
 	}
 
     /// <summary>
-    /// Move the character along the arena.
+    /// Apply a moving force to the character.
     /// </summary>
     /// <param name="factor">The move factor. Ranges from -1 to 1 to move from left to right respectively.</param>
-    public void Move(float factor) {
-        float moveAmount = -factor * moveSpeed * Time.deltaTime;
+    public void ApplyMoveFactor(float factor) {
+        float moveAmount = -factor * accel * Time.deltaTime;
 
-        _pivot.Rotate(new Vector3(0, 1, 0), moveAmount);
+        this.velocity = Mathf.Clamp(this.velocity + moveAmount, -maxSpeed, maxSpeed);
+        Debug.Log("ApplyMoveFactor: " + this.velocity.ToString());
+    }
+
+    /// <summary>
+    /// Moves the character around the arena. Called every frame.
+    /// </summary>
+    private void Move() {
+        // Decay the velocity
+        Debug.Log("Move: " + this.velocity.ToString() + " // Decay: " + this.decay.ToString());
+        this.velocity = this.velocity * this.decay;
+
+        // Kill velocity if it's beneath the deadzone
+        this.velocity = (Mathf.Abs(this.velocity) > this.deadZone) ? this.velocity : 0;
+
+        // Apply velocity to the character
+        _pivot.Rotate(new Vector3(0, 1, 0), this.velocity);
     }
 }

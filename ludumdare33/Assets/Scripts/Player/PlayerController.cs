@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
     private PlayerCharacter _character;
 
     /* CONSTRUCTOR */
-	void Awake () {
+	void Awake() {
         FindComponents();
 	}
 
@@ -18,15 +18,16 @@ public class PlayerController : MonoBehaviour {
     }
 	
     /* METHODS */
-	void Update () {
-        ApplyMove();
+	void FixedUpdate() {
+        ApplyMoveInput();
 	}
 
-    private void ApplyMove() {
+    private void ApplyMoveInput() {
         float horizontalAxis = Input.GetAxis("Horizontal");
 
-        _character.Move(horizontalAxis);
-
-        Debug.Log(horizontalAxis);
+        if (horizontalAxis != 0) {
+            _character.ApplyMoveFactor(horizontalAxis);
+            _camera.SetOffset(horizontalAxis);
+        }
     }
 }
