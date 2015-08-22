@@ -131,8 +131,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualizeFocus: 0
   focalLength: 10
-  focalSize: 1.70000005
-  aperture: 24
+  focalSize: 1.60000002
+  aperture: 19
   focalTransform: {fileID: 0}
   maxBlurSize: 2
   highResolution: 0
@@ -193,6 +193,14 @@ MonoBehaviour:
     - Object: {fileID: 450292}
       ObjeckLink: -1881393719
       PropertyPath: m_RootOrder
+      Mode: 0
+    - Object: {fileID: 11481310}
+      ObjeckLink: -1853659070
+      PropertyPath: focalSize
+      Mode: 0
+    - Object: {fileID: 11481310}
+      ObjeckLink: -1853659070
+      PropertyPath: aperture
       Mode: 0
     - Object: {fileID: 11481310}
       ObjeckLink: -1853659070

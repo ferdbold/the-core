@@ -363,7 +363,15 @@ MonoBehaviour:
     - LIIF: -1009227582
       InstanceTarget: {fileID: 4578442}
   Modifications:
-    Modificated: []
+    Modificated:
+    - Object: {fileID: 11442600}
+      ObjeckLink: 1907284045
+      PropertyPath: focalSize
+      Mode: 0
+    - Object: {fileID: 11442600}
+      ObjeckLink: 1907284045
+      PropertyPath: aperture
+      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -436,8 +444,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   visualizeFocus: 0
   focalLength: 10
-  focalSize: 1.70000005
-  aperture: 24
+  focalSize: 1.60000002
+  aperture: 19
   focalTransform: {fileID: 0}
   maxBlurSize: 2
   highResolution: 0
