@@ -6,11 +6,16 @@ public class CameraBehaviour : MonoBehaviour {
 
     /* PUBLIC ATTRIBUTES */
     
+    [Header("Horizontal Offset")]
     public float maxOffset = 3.0f;
     public float offsetAccel = 0.2f;
     public float offsetDecay = 0.95f;
     public float offsetDeadZone = 0.01f;
     public Vector3 offset;
+
+    [Header("Vertical Offset")]
+    public float verticalCameraOffset = 0.5f;
+
 	
     /* ATTRIBUTES */
 
@@ -40,7 +45,7 @@ public class CameraBehaviour : MonoBehaviour {
         this.offset.x *= this.offsetDecay;
         this.offset.x = (Mathf.Abs(this.offset.x) > this.offsetDeadZone) ? this.offset.x : 0;
 
-        transform.DOLocalMoveY(_target.localPosition.y, 0.8f);
+        transform.DOLocalMoveY(_target.localPosition.y, this.verticalCameraOffset);
         transform.localRotation = Quaternion.Euler(0, this.offset.x, 0);
     }
 

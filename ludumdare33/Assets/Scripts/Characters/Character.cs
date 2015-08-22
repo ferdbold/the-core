@@ -85,7 +85,8 @@ public class Character : MonoBehaviour {
 
     private bool IsJumping {
         get {
-            return !Physics.Raycast(_pawn.localPosition, -Vector3.up, _pawnDistToGround + 0.05f);
+            Debug.DrawRay(_pawn.position, -Vector3.up * (_pawnDistToGround + 0.1f));
+            return !Physics.Raycast(_pawn.position, -Vector3.up, _pawnDistToGround + 0.1f);
         }
     }
 
