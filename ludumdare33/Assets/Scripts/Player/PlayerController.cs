@@ -10,7 +10,11 @@ public class PlayerController : MonoBehaviour {
     /* CONSTRUCTOR */
 	void Awake() {
         FindComponents();
-	}
+    }
+
+    void Start() {
+        _camera.Target = _character.Pawn;
+    }
 
     private void FindComponents() {
         _camera = GameObject.FindWithTag("MainCamera").GetComponent<CameraBehaviour>();
