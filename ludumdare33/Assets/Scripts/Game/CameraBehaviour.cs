@@ -28,14 +28,11 @@ public class CameraBehaviour : MonoBehaviour {
     /// <summary>
     /// Soft offset the camera.
     /// </summary>
-    public void Offset() {
-        Vector3 origPosition = transform.localPosition;
-        
+    public void Offset() {     
         this.offset *= this.offsetDecay;
 
         this.offset = (Mathf.Abs(this.offset) > this.offsetDeadZone) ? this.offset : 0;
 
-        origPosition.x = this.offset;
-        transform.localPosition = origPosition;
+        transform.localRotation = Quaternion.Euler(0, this.offset, 0);
     }
 }

@@ -1,19 +1,15 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &187624
+--- !u!1 &137988
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 456528}
-  - 20: {fileID: 2081806}
-  - 92: {fileID: 9215912}
-  - 124: {fileID: 12468004}
-  - 81: {fileID: 8104914}
-  - 114: {fileID: 11447260}
-  - 114: {fileID: 11457166}
+  - 4: {fileID: 450292}
+  - 114: {fileID: 11485044}
+  - 114: {fileID: 11494636}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -21,24 +17,56 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &456528
+--- !u!1 &158662
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 459462}
+  - 20: {fileID: 2092056}
+  - 124: {fileID: 12487998}
+  - 92: {fileID: 9233748}
+  - 81: {fileID: 8135796}
+  m_Layer: 0
+  m_Name: Camera
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &450292
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187624}
-  m_LocalRotation: {x: .0871557519, y: 0, z: 0, w: .99619472}
-  m_LocalPosition: {x: 0, y: .300000012, z: -6}
+  m_GameObject: {fileID: 137988}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 459462}
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!20 &2081806
+--- !u!4 &459462
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158662}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: .449999988, z: -6}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 450292}
+  m_RootOrder: 0
+--- !u!20 &2092056
 Camera:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187624}
+  m_GameObject: {fileID: 158662}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -53,8 +81,8 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 0
-  orthographic size: 1.62
-  m_Depth: -1
+  orthographic size: 5
+  m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -66,37 +94,26 @@ Camera:
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
   m_StereoMirrorMode: 0
---- !u!81 &8104914
+--- !u!81 &8135796
 AudioListener:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187624}
+  m_GameObject: {fileID: 158662}
   m_Enabled: 1
---- !u!92 &9215912
+--- !u!92 &9233748
 Behaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187624}
+  m_GameObject: {fileID: 158662}
   m_Enabled: 1
---- !u!114 &11447260
+--- !u!114 &11485044
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187624}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 19c467daabc759342a5f1aef08fdc13e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &11457166
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187624}
+  m_GameObject: {fileID: 137988}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 46a02d0f612a241b293c0da4f82b712c, type: 3}
@@ -108,27 +125,39 @@ MonoBehaviour:
     Hidden: 
   Links:
     Links:
-    - LIIF: -1891779332
-      InstanceTarget: {fileID: 11457166}
-    - LIIF: 1611223095
-      InstanceTarget: {fileID: 456528}
-    - LIIF: -1385521360
-      InstanceTarget: {fileID: 2081806}
-    - LIIF: -179397803
-      InstanceTarget: {fileID: 9215912}
-    - LIIF: 2101074263
-      InstanceTarget: {fileID: 12468004}
-    - LIIF: -986053681
-      InstanceTarget: {fileID: 8104914}
-    - LIIF: -1416275891
-      InstanceTarget: {fileID: 187624}
-    - LIIF: -2072144615
-      InstanceTarget: {fileID: 11447260}
+    - LIIF: 1724581973
+      InstanceTarget: {fileID: 11485044}
+    - LIIF: -1881393719
+      InstanceTarget: {fileID: 450292}
+    - LIIF: 762737032
+      InstanceTarget: {fileID: 137988}
+    - LIIF: -1541528658
+      InstanceTarget: {fileID: 11494636}
+    - LIIF: 408951391
+      InstanceTarget: {fileID: 8135796}
+    - LIIF: -1927179479
+      InstanceTarget: {fileID: 9233748}
+    - LIIF: 322831427
+      InstanceTarget: {fileID: 12487998}
+    - LIIF: 1477480594
+      InstanceTarget: {fileID: 2092056}
+    - LIIF: -1895544248
+      InstanceTarget: {fileID: 459462}
+    - LIIF: 474759903
+      InstanceTarget: {fileID: 158662}
   Modifications:
     Modificated:
-    - Object: {fileID: 456528}
-      ObjeckLink: 1611223095
+    - Object: {fileID: 450292}
+      ObjeckLink: -1881393719
       PropertyPath: m_RootOrder
+      Mode: 0
+    - Object: {fileID: 11494636}
+      ObjeckLink: -1541528658
+      PropertyPath: maxOffset
+      Mode: 0
+    - Object: {fileID: 11494636}
+      ObjeckLink: -1541528658
+      PropertyPath: offsetAccel
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
@@ -136,12 +165,28 @@ MonoBehaviour:
     TransformParentChanges: []
   ParentPrefabGUID: 
   PrefabGUID: 9a14ced7e0ca3b845980f30ab9abd57a
---- !u!124 &12468004
+--- !u!114 &11494636
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 137988}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19c467daabc759342a5f1aef08fdc13e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxOffset: 10
+  offsetAccel: 10
+  offsetDecay: .949999988
+  offsetDeadZone: .00999999978
+  offset: 0
+--- !u!124 &12487998
 Behaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 187624}
+  m_GameObject: {fileID: 158662}
   m_Enabled: 1
 --- !u!1001 &100100000
 Prefab:
@@ -149,8 +194,16 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: offsetAccel
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: maxOffset
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 187624}
+  m_RootGameObject: {fileID: 137988}
   m_IsPrefabParent: 1
