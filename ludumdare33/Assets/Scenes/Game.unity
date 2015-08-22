@@ -183,8 +183,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 200201417}
-  m_LocalRotation: {x: .408217937, y: -.234569728, z: .109381676, w: .875426054}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalRotation: {x: .921123743, y: -.0277523119, z: .0668349937, w: .382483989}
+  m_LocalPosition: {x: 0, y: 3.01999998, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -354,7 +354,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: be01b4c996e6db34d90e7bbcd0eb5bbf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -78.6200027
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: be01b4c996e6db34d90e7bbcd0eb5bbf, type: 3}
       propertyPath: m_LocalPosition.z
@@ -637,3 +637,11 @@ MonoBehaviour:
   dx11BokehTexture: {fileID: 2800000, guid: a4cdca73d61814d33ac1587f6c163bca, type: 3}
   dx11BokehScale: 1.20000005
   dx11BokehIntensity: 2.5
+--- !u!45 &1689528787
+Skybox:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1689528780}
+  m_Enabled: 1
+  m_CustomSkybox: {fileID: 2100000, guid: ab675e6698bde46fd87143fb0d7580cb, type: 2}
