@@ -8,11 +8,11 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 412256}
-  - 114: {fileID: 11423568}
-  - 114: {fileID: 11488790}
+  - 114: {fileID: 11406018}
+  - 114: {fileID: 11445414}
   m_Layer: 0
-  m_Name: PlayerCharacter
-  m_TagString: PlayerController
+  m_Name: Character
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -69,7 +69,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139770}
-  m_LocalRotation: {x: 0, y: .0457116999, z: 0, w: .998954713}
+  m_LocalRotation: {x: 0, y: -.025042858, z: 0, w: .99968636}
   m_LocalPosition: {x: 0, y: .0850000009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -131,7 +131,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11423568
+--- !u!114 &11406018
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -148,41 +148,47 @@ MonoBehaviour:
     Hidden: 
   Links:
     Links:
-    - LIIF: -639363754
-      InstanceTarget: {fileID: 11423568}
-    - LIIF: 149230282
-      InstanceTarget: {fileID: 137024}
-    - LIIF: 1229185668
+    - LIIF: -1046600603
+      InstanceTarget: {fileID: 11406018}
+    - LIIF: -2111994405
       InstanceTarget: {fileID: 139770}
-    - LIIF: 1227927015
-      InstanceTarget: {fileID: 178250}
-    - LIIF: 230024455
-      InstanceTarget: {fileID: 412256}
-    - LIIF: 19080066
+    - LIIF: -1056975555
       InstanceTarget: {fileID: 420346}
-    - LIIF: -184384737
+    - LIIF: -1968325322
+      InstanceTarget: {fileID: 178250}
+    - LIIF: 1732963429
       InstanceTarget: {fileID: 459164}
-    - LIIF: 1825500895
-      InstanceTarget: {fileID: 2303690}
-    - LIIF: -550840337
+    - LIIF: 1634885720
       InstanceTarget: {fileID: 3309600}
-    - LIIF: 1858113432
+    - LIIF: -1017697847
       InstanceTarget: {fileID: 6510954}
-    - LIIF: -767638800
-      InstanceTarget: {fileID: 11488790}
+    - LIIF: 567654509
+      InstanceTarget: {fileID: 2303690}
+    - LIIF: -1601421078
+      InstanceTarget: {fileID: 137024}
+    - LIIF: 1649427324
+      InstanceTarget: {fileID: 412256}
+    - LIIF: -681584212
+      InstanceTarget: {fileID: 11445414}
   Modifications:
     Modificated:
+    - Object: {fileID: 420346}
+      ObjeckLink: -1056975555
+      PropertyPath: m_LocalRotation
+      Mode: 0
     - Object: {fileID: 412256}
-      ObjeckLink: 230024455
+      ObjeckLink: 1649427324
       PropertyPath: m_RootOrder
       Mode: 0
     NonPrefabObjects: []
-    NonPrefabComponents: []
+    NonPrefabComponents:
+    - child: {fileID: 11445414}
+      parent: {fileID: 137024}
     RemovedObjects: 
     TransformParentChanges: []
   ParentPrefabGUID: 
-  PrefabGUID: 31a9fb8d0fffe584dad54e40f44978d2
---- !u!114 &11488790
+  PrefabGUID: 7863bece5036f7c4c9a9b934f32d14dc
+--- !u!114 &11445414
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -190,7 +196,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 137024}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 88708cd08a66e1d44ad2c53286df5fb8, type: 3}
+  m_Script: {fileID: 11500000, guid: 276830591482b1743873d0df8f75edad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 1

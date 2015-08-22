@@ -3,18 +3,18 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
-    /* ATTRIBUTES */
+    /* COMPONENTS */
     private CameraBehaviour _camera;
     private PlayerCharacter _character;
 
     /* CONSTRUCTOR */
-	void Start () {
+	void Awake () {
         FindComponents();
 	}
 
     private void FindComponents() {
         _camera = GameObject.FindWithTag("MainCamera").GetComponent<CameraBehaviour>();
-        _character = GameObject.FindWithTag("Pawn").GetComponent<PlayerCharacter>();
+        _character = GameObject.FindWithTag("PlayerCharacter").GetComponent<PlayerCharacter>();
     }
 	
     /* METHODS */
@@ -25,8 +25,8 @@ public class PlayerController : MonoBehaviour {
     private void ApplyMove() {
         float horizontalAxis = Input.GetAxis("Horizontal");
 
-        if (horizontalAxis != 0) {
-            
-        }
+        _character.Move(horizontalAxis);
+
+        Debug.Log(horizontalAxis);
     }
 }

@@ -9,9 +9,11 @@ GameObject:
   m_Component:
   - 4: {fileID: 489816}
   - 114: {fileID: 11474156}
+  - 114: {fileID: 11411234}
+  - 114: {fileID: 11480740}
   m_Layer: 0
   m_Name: Game
-  m_TagString: Untagged
+  m_TagString: GameController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,6 +30,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!114 &11411234
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 499f876c465cc7f43b855f0e88184a8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11474156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -51,14 +64,39 @@ MonoBehaviour:
       InstanceTarget: {fileID: 191690}
     - LIIF: 1050737996
       InstanceTarget: {fileID: 489816}
+    - LIIF: -846025902
+      InstanceTarget: {fileID: 11411234}
+    - LIIF: 1426508353
+      InstanceTarget: {fileID: 11480740}
   Modifications:
-    Modificated: []
+    Modificated:
+    - Object: {fileID: 191690}
+      ObjeckLink: -1451893950
+      PropertyPath: m_TagString
+      Mode: 0
+    - Object: {fileID: 489816}
+      ObjeckLink: 1050737996
+      PropertyPath: m_RootOrder
+      Mode: 0
     NonPrefabObjects: []
-    NonPrefabComponents: []
+    NonPrefabComponents:
+    - child: {fileID: 11480740}
+      parent: {fileID: 191690}
     RemovedObjects: 
     TransformParentChanges: []
   ParentPrefabGUID: 
   PrefabGUID: 9b1d20b59b583954c9e7ee5e3be5030a
+--- !u!114 &11480740
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35b5f4ada7d99b0478f1878f115d2dbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
