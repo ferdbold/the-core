@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour {
     /* METHODS */
 	void Update() {
         ApplyMoveInput();
+        ApplyJumpInput();
 	}
 
     private void ApplyMoveInput() {
@@ -28,6 +29,14 @@ public class PlayerController : MonoBehaviour {
         if (horizontalAxis != 0) {
             _character.ApplyMoveFactor(horizontalAxis);
             _camera.ApplyOffsetFactor(horizontalAxis);
+        }
+    }
+
+    private void ApplyJumpInput() {
+        bool jumpButton = Input.GetButtonDown("Jump");
+
+        if (jumpButton) {
+            _character.Jump();
         }
     }
 }
