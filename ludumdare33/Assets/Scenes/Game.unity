@@ -1069,10 +1069,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 11412580, guid: 31a9fb8d0fffe584dad54e40f44978d2, type: 2}
-      propertyPath: Links.Links.Array.data[11].InstanceTarget
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31a9fb8d0fffe584dad54e40f44978d2, type: 2}
   m_IsPrefabParent: 0
@@ -1158,10 +1154,6 @@ Prefab:
     - target: {fileID: 22444336, guid: 834f48ed392890f46903f3d720d90773, type: 2}
       propertyPath: m_Pivot.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 11476992, guid: 834f48ed392890f46903f3d720d90773, type: 2}
-      propertyPath: Links.Links.Array.data[4].InstanceTarget
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 834f48ed392890f46903f3d720d90773, type: 2}
@@ -1840,6 +1832,10 @@ Prefab:
     - target: {fileID: 106888, guid: cac97e303c14916418b664181844e77a, type: 2}
       propertyPath: m_Name
       value: Enemy A1
+      objectReference: {fileID: 0}
+    - target: {fileID: 157442, guid: cac97e303c14916418b664181844e77a, type: 2}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: cac97e303c14916418b664181844e77a, type: 2}

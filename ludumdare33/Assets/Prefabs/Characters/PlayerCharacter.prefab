@@ -83,6 +83,7 @@ GameObject:
   - 54: {fileID: 5422862}
   - 198: {fileID: 19869340}
   - 199: {fileID: 19975124}
+  - 114: {fileID: 11466580}
   m_Layer: 0
   m_Name: Pawn
   m_TagString: Untagged
@@ -383,11 +384,15 @@ MonoBehaviour:
       InstanceTarget: {fileID: 19975124}
     - LIIF: 1104329768
       InstanceTarget: {fileID: 19869340}
+    - LIIF: 417698997
+      InstanceTarget: {fileID: 11466580}
   Modifications:
     Modificated: []
     NonPrefabObjects: []
-    NonPrefabComponents: []
-    RemovedObjects: 369bb279
+    NonPrefabComponents:
+    - child: {fileID: 11466580}
+      parent: {fileID: 178250}
+    RemovedObjects: 
     TransformParentChanges: []
   ParentPrefabGUID: 
   PrefabGUID: 31a9fb8d0fffe584dad54e40f44978d2
@@ -437,6 +442,17 @@ MonoBehaviour:
   offsetDeadZone: .00999999978
   offset: {x: 0, y: 0, z: 0}
   verticalCameraOffset: .5
+--- !u!114 &11466580
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: beb3d811a5711db4c98dfea60912ba23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11488790
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -458,6 +474,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 411256, guid: 95ae228ca538f8542981f0885ee8394c, type: 2}
   fireAnimKickback: .300000012
   fireAnimDuration: .150000006
+  _game: {fileID: 0}
 --- !u!124 &12491286
 Behaviour:
   m_ObjectHideFlags: 1

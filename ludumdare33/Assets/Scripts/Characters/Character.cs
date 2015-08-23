@@ -39,7 +39,7 @@ public class Character : MonoBehaviour {
         FindComponents();
 	}
 
-    private void FindComponents() {
+    protected virtual void FindComponents() {
         Collider pawnCollider;
 
         _pivot = transform.Find("Pivot");

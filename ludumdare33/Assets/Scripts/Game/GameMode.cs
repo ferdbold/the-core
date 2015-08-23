@@ -20,12 +20,19 @@ public class GameMode : MonoBehaviour {
 
     /* ATTRIBUTES */
 
+    private static GameMode _instance;
     private float _timeUntilSpawn = 0;
+    private bool _gameActive = false;
 
     /* CONSTRUCTOR */
 
 	void Awake() {
         FindComponents();
+        _instance = this;
+    }
+
+    void Start() {
+        _gameActive = true;
     }
 
     private void FindComponents() {
@@ -35,9 +42,11 @@ public class GameMode : MonoBehaviour {
     /* METHODS */
 
 	void Update() {
-        TickClock();
-        TickSpawn();
-	}
+        if (GameIsActive) {
+            TickClock();
+            TickSpawn();
+        }
+    }
 
     /// <summary>
     /// Tick the game clock.
@@ -84,6 +93,25 @@ public class GameMode : MonoBehaviour {
     /// End the game.
     /// </summary>
     private void EndGame() {
+        _gameActive = false;
+        Debug.Log("Game over");
+    }
 
+    /// <summary>
+    /// Kill the player and end the game.
+    /// </summary>
+    public void KillPlayer() {
+        Debug.Log("Player ded");
+        EndGame();
+    }
+
+    /* PROPERTIES */
+
+    public static GameMode Instance {
+        get { return _instance; }
+    }
+
+    public bool GameIsActive {
+        get { return _gameActive; }
     }
 }

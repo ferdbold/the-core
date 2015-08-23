@@ -23,9 +23,11 @@ public class PlayerController : MonoBehaviour {
 	
     /* METHODS */
 	void Update() {
-        ApplyMoveInput();
-        ApplyJumpInput();
-        ApplyProjectileFire();
+        if (GameMode.Instance.GameIsActive) {
+            ApplyMoveInput();
+            ApplyJumpInput();
+            ApplyProjectileFire();
+        }
 	}
 
     private void ApplyMoveInput() {
@@ -51,9 +53,5 @@ public class PlayerController : MonoBehaviour {
         if (fireButton) {
             _character.Fire();
         }
-    }
-
-    private void OnTriggerEnter(Collider other) {
-        Debug.Log("Ca marche");
     }
 }

@@ -12,9 +12,11 @@ public class Enemy : MonoBehaviour {
     /* METHODS */
 
     void Update() {
-        transform.Rotate(
-            new Vector3(0, 1, 0),
-            this.moveSpeed * direction * Time.deltaTime
-        );
+        if (GameMode.Instance.GameIsActive) {
+            transform.Rotate(
+                new Vector3(0, 1, 0),
+                this.moveSpeed * direction * Time.deltaTime
+            );
+        }
     }
 }
