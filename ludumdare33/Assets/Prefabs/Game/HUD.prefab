@@ -61,6 +61,8 @@ GameObject:
   - 223: {fileID: 22395770}
   - 114: {fileID: 11482130}
   - 114: {fileID: 11461246}
+  - 222: {fileID: 22222604}
+  - 114: {fileID: 11416048}
   m_Layer: 0
   m_Name: HUD
   m_TagString: HUD
@@ -305,6 +307,27 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Sprite: {fileID: 21300000, guid: ca24e42b730c1c54bb2b51ed08bb58e6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!114 &11416048
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -698,6 +721,10 @@ MonoBehaviour:
       InstanceTarget: {fileID: 22412546}
     - LIIF: -507403087
       InstanceTarget: {fileID: 143070}
+    - LIIF: -1010749079
+      InstanceTarget: {fileID: 11416048}
+    - LIIF: -414671286
+      InstanceTarget: {fileID: 22222604}
   Modifications:
     Modificated:
     - Object: {fileID: 22444336}
@@ -741,7 +768,11 @@ MonoBehaviour:
       PropertyPath: m_LocalPosition
       Mode: 0
     NonPrefabObjects: []
-    NonPrefabComponents: []
+    NonPrefabComponents:
+    - child: {fileID: 11416048}
+      parent: {fileID: 129756}
+    - child: {fileID: 22222604}
+      parent: {fileID: 129756}
     RemovedObjects: 
     TransformParentChanges: []
   ParentPrefabGUID: 
@@ -1067,6 +1098,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 107262}
+--- !u!222 &22222604
+CanvasRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 129756}
 --- !u!222 &22230580
 CanvasRenderer:
   m_ObjectHideFlags: 1

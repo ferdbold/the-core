@@ -13,7 +13,7 @@ public class TargetWidget : MonoBehaviour {
     /* COMPONENTS */
 
     private Image[] _images;
-    private RectTransform _tweeningImage;
+    private RectTransform _tweeningImage = null;
 
     /* ATTRIBUTES */
 
@@ -33,7 +33,9 @@ public class TargetWidget : MonoBehaviour {
     /* METHODS */
 
     void Update() {
-        _tweeningImage.localScale = _tweeningScale;
+        if (_tweeningImage != null) {
+            _tweeningImage.localScale = _tweeningScale;
+        }
     }
 
     /* PROPERTIES */
