@@ -20,10 +20,12 @@ public class CameraBehaviour : MonoBehaviour {
     /* ATTRIBUTES */
 
     private Transform _target;
+    private Vector3 _position;
 
     /* COMPONENTS */
 
     private EdgeDetection _edgeDetection;
+    private Camera _camera;
 
     /* CONSTRUCTOR */
 
@@ -31,8 +33,13 @@ public class CameraBehaviour : MonoBehaviour {
         FindComponents();
     }
 
+    void Start() {
+        _position = _camera.transform.localPosition;
+    }
+
     private void FindComponents() {
         _edgeDetection = transform.Find("Camera").GetComponent<EdgeDetection>();
+        _camera = transform.Find("Camera").GetComponent<Camera>();
     }
 
     /* METHODS */
@@ -61,6 +68,17 @@ public class CameraBehaviour : MonoBehaviour {
 
         transform.DOLocalMoveY(_target.localPosition.y, this.verticalCameraOffset);
         transform.localRotation = Quaternion.Euler(0, this.offset.x, 0);
+    }
+
+    /// <summary>
+    /// Shake the camera.
+    /// </summary>
+    public void Shake() {
+        _camera.DOShakePosition(0.4f, 0.2f).OnComplete(OnShakeComplete);
+    }
+    
+    public void OnShakeComplete() {
+        _camera.transform.localPosition = _position;
     }
 
     /// <summary>

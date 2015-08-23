@@ -114,6 +114,7 @@ public class GameMode : MonoBehaviour {
     public void OnTargetHit() {
         _targetsHit++;
         _hud.SetTargetsHit(_targetsHit);
+        _camera.Shake();
 
         if (_targetsHit >= this.targetGoal) {
             WinGame();
