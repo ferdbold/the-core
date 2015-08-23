@@ -46,6 +46,7 @@ GameObject:
   - 198: {fileID: 19851650}
   - 199: {fileID: 19997494}
   - 136: {fileID: 13641778}
+  - 114: {fileID: 11497358}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -193,30 +194,33 @@ MonoBehaviour:
       InstanceTarget: {fileID: 11403604}
     - LIIF: -641095757
       InstanceTarget: {fileID: 11156000}
+    - LIIF: -674131946
+      InstanceTarget: {fileID: 11497358}
   Modifications:
     Modificated:
-    - Object: {fileID: 418262}
-      ObjeckLink: -365282702
-      PropertyPath: m_LocalPosition
-      Mode: 0
-    - Object: {fileID: 475702}
-      ObjeckLink: -2037902440
-      PropertyPath: m_LocalPosition
-      Mode: 0
-    - Object: {fileID: 475702}
-      ObjeckLink: -2037902440
-      PropertyPath: m_LocalScale
-      Mode: 0
     - Object: {fileID: 475702}
       ObjeckLink: -2037902440
       PropertyPath: m_RootOrder
       Mode: 0
     NonPrefabObjects: []
-    NonPrefabComponents: []
+    NonPrefabComponents:
+    - child: {fileID: 11497358}
+      parent: {fileID: 186644}
     RemovedObjects: 
     TransformParentChanges: []
   ParentPrefabGUID: 
   PrefabGUID: 578e3c6f0bae18046b12aad96b1901a5
+--- !u!114 &11497358
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 186644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4235514c8944bf1408227fc61d2df5fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &13641778
 CapsuleCollider:
   m_ObjectHideFlags: 1
