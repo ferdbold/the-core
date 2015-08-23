@@ -11,6 +11,7 @@ public class Target : MonoBehaviour {
     /* COMPONENTS */
 
     private Animation _animation;
+    private ParticleSystem _particles;
 
     /* CONSTRUCTOR */
 
@@ -20,6 +21,7 @@ public class Target : MonoBehaviour {
 
     private void FindComponents() {
         _animation = GetComponent<Animation>();
+        _particles = transform.Find("Target").GetComponent<ParticleSystem>();
     }
 
     /* METHODS */
@@ -30,6 +32,10 @@ public class Target : MonoBehaviour {
         if (_timeElapsed > _lifeSpan) {
             GameObject.Destroy(gameObject, 0.35f);
             _animation.Play();
+        }
+
+        if (!GameMode.Instance.GameIsActive) {
+            _particles.Stop();
         }
     }
 

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityStandardAssets.ImageEffects;
 using System.Collections;
 using DG.Tweening;
 
@@ -16,14 +17,27 @@ public class CameraBehaviour : MonoBehaviour {
     [Header("Vertical Offset")]
     public float verticalCameraOffset = 0.5f;
 
-	
     /* ATTRIBUTES */
 
     private Transform _target;
 
+    /* COMPONENTS */
+
+    private EdgeDetection _edgeDetection;
+
+    /* CONSTRUCTOR */
+
+    void Awake() {
+        FindComponents();
+    }
+
+    private void FindComponents() {
+        _edgeDetection = transform.Find("Camera").GetComponent<EdgeDetection>();
+    }
+
     /* METHODS */
 
-	void Update () {
+	void Update() {
         Offset();
 	}
 
@@ -49,12 +63,22 @@ public class CameraBehaviour : MonoBehaviour {
         transform.localRotation = Quaternion.Euler(0, this.offset.x, 0);
     }
 
+    /// <summary>
+    /// Toggles on and off the line-only render mode.
+    /// </summary>
+    /// <param name="on">Whether to turn it on of off</param>
+    public void ToggleLineMode(bool on) {
+        if (on) {
+            DOTween.To(()=> _edgeDetection.edgesOnly, x => _edgeDetection.edgesOnly = x, 1.0f, 1.0f);
+        } else {
+            DOTween.To(()=> _edgeDetection.edgesOnly, x => _edgeDetection.edgesOnly = x, 0.0f, 1.0f);
+        }
+    }
+
     /* PROPERTIES */
 
     public Transform Target {
         get { return _target; }
-        set {
-            _target = value;
-        }
+        set { _target = value; }
     }
 }

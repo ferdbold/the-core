@@ -25,7 +25,7 @@ public class Character : MonoBehaviour {
     /* COMPONENTS */
 
     private Transform _pivot;
-    private Transform _pawn;
+    protected Transform _pawn;
 
     /* ATTRIBUTES */
 

@@ -28,9 +28,9 @@ GameObject:
   - 33: {fileID: 3305596}
   - 23: {fileID: 2398646}
   - 65: {fileID: 6500896}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Shooter
-  m_TagString: Enemy
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,13 +140,13 @@ MonoBehaviour:
       InstanceTarget: {fileID: 6500896}
   Modifications:
     Modificated:
-    - Object: {fileID: 157442}
-      ObjeckLink: -467173038
-      PropertyPath: m_TagString
-      Mode: 0
     - Object: {fileID: 106888}
       ObjeckLink: 1582399967
       PropertyPath: m_Name
+      Mode: 0
+    - Object: {fileID: 11487668}
+      ObjeckLink: 550989028
+      PropertyPath: moveSpeed
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
@@ -165,7 +165,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c75ecc4fcedcf944ba5eb6cc6a6b5a75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 20
+  moveSpeed: 10
   direction: 1
 --- !u!1001 &100100000
 Prefab:

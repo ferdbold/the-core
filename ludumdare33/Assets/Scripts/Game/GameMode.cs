@@ -17,6 +17,7 @@ public class GameMode : MonoBehaviour {
     /* COMPONENTS */
 
     private HUD _hud;
+    private CameraBehaviour _camera;
 
     /* ATTRIBUTES */
 
@@ -37,6 +38,7 @@ public class GameMode : MonoBehaviour {
 
     private void FindComponents() {
         _hud = GameObject.FindWithTag("HUD").GetComponent<HUD>();
+        _camera = GameObject.FindWithTag("MainCamera").GetComponent<CameraBehaviour>();
     }
 	
     /* METHODS */
@@ -56,6 +58,7 @@ public class GameMode : MonoBehaviour {
         _hud.SetClock(this.timeLeft);
 
         if (this.timeLeft < 0) {
+            Debug.Log("Time is up");
             EndGame();
         }
     }
@@ -94,6 +97,8 @@ public class GameMode : MonoBehaviour {
     /// </summary>
     private void EndGame() {
         _gameActive = false;
+        _camera.ToggleLineMode(true);
+        _hud.OnGameEnd();
         Debug.Log("Game over");
     }
 
@@ -101,8 +106,15 @@ public class GameMode : MonoBehaviour {
     /// Kill the player and end the game.
     /// </summary>
     public void KillPlayer() {
-        Debug.Log("Player ded");
+        Debug.Log("Player died");
         EndGame();
+    }
+
+    /// <summary>
+    /// Restart the game.
+    /// </summary>
+    public void Restart() {
+        Application.LoadLevel("Game");
     }
 
     /* PROPERTIES */

@@ -6,6 +6,7 @@ public class HUD : MonoBehaviour {
     /* COMPONENTS */
 
     private ClockWidget _clock;
+    private GameOverWidget _gameOver;
 
     /* CONSTRUCTOR */
 
@@ -15,6 +16,7 @@ public class HUD : MonoBehaviour {
 
     private void FindComponents() {
         _clock = transform.Find("Clock").GetComponent<ClockWidget>();
+        _gameOver = transform.Find("GameOver").GetComponent<GameOverWidget>();
     }
 
     /* METHODS */
@@ -25,5 +27,12 @@ public class HUD : MonoBehaviour {
     /// <param name="time">The time to set the clock to</param>
     public void SetClock(float time) {
         _clock.TimeLeft = time;
+    }
+
+    /// <summary>
+    /// Display game over UI.
+    /// </summary>
+    public void OnGameEnd() {
+        _gameOver.Toggle(true);
     }
 }

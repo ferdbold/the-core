@@ -27,6 +27,8 @@ public class PlayerController : MonoBehaviour {
             ApplyMoveInput();
             ApplyJumpInput();
             ApplyProjectileFire();
+        } else {
+            ApplyRetryInput();
         }
 	}
 
@@ -52,6 +54,14 @@ public class PlayerController : MonoBehaviour {
 
         if (fireButton) {
             _character.Fire();
+        }
+    }
+
+    private void ApplyRetryInput() {
+        bool retryButton = Input.GetButtonDown("Retry");
+
+        if (retryButton) {
+            GameMode.Instance.Restart();
         }
     }
 }
