@@ -33,10 +33,8 @@ public class Target : MonoBehaviour {
         }
     }
 
-    void OnTriggerEnter(Collider other) {
-        if (LayerMask.NameToLayer("Projectile") == other.gameObject.layer) {
-            Debug.Log("Hit");
-        }
+    void OnHit() {
+        Debug.Log("Hit");
     }
 
     /* COMPONENTS */
