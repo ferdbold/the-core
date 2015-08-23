@@ -7,6 +7,7 @@ public class HUD : MonoBehaviour {
 
     /* COMPONENTS */
 
+    private IntroWidget _intro;
     private ClockWidget _clock;
     private GameOverWidget _gameOver;
     private TargetWidget _targets;
@@ -23,6 +24,7 @@ public class HUD : MonoBehaviour {
 	}
 
     private void FindComponents() {
+        _intro = transform.Find("Intro").GetComponent<IntroWidget>();
         _clock = transform.Find("Clock").GetComponent<ClockWidget>();
         _gameOver = transform.Find("GameOver").GetComponent<GameOverWidget>();
         _targets = transform.Find("Targets").GetComponent<TargetWidget>();
@@ -35,11 +37,24 @@ public class HUD : MonoBehaviour {
         ApplyFlash();
     }
 
+    /// <summary>
+    /// Apply the screen flashing effect.
+    /// </summary>
     private void ApplyFlash() {
         Color color = _flash.color;
         color.a = _flashAlpha;
 
         _flash.color = color;
+    }
+
+    /// <summary>
+    /// Toggle the intro screen.
+    /// </summary>
+    /// <param name="on">Whether to turn in on or off.</param>
+    public void ToggleIntro(bool on) {
+        _intro.Toggle(on);
+        _clock.Toggle(!on);
+        _targets.Toggle(!on);
     }
 
     /// <summary>

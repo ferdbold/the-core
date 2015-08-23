@@ -48,6 +48,10 @@ public class ClockWidget : MonoBehaviour {
         _timeLeftText.rectTransform.DOScale(new Vector3(1.0f, 1.0f, 1.0f), 0.4f);
     }
 
+    public void Toggle(bool on) {
+        gameObject.SetActive(on);
+    }
+
     /* PROPERTIES */
 
     public float TimeLeft {

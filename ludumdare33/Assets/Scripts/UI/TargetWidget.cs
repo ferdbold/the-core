@@ -38,6 +38,10 @@ public class TargetWidget : MonoBehaviour {
         }
     }
 
+    public void Toggle(bool on) {
+        gameObject.SetActive(on);
+    }
+
     /* PROPERTIES */
 
     public int TargetsHit {

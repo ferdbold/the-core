@@ -33,6 +33,7 @@ public class GameMode : MonoBehaviour {
     private static GameMode _instance;
     private float _timeUntilSpawn = 0;
     private bool _gameActive = false;
+    private bool _introActive = false;
     private int _targetsHit = 0;
 
     /* CONSTRUCTOR */
@@ -43,7 +44,16 @@ public class GameMode : MonoBehaviour {
     }
 
     void Start() {
-        _gameActive = true;
+        _introActive = Persistent.Instance.showIntro;
+
+        if (_introActive) {
+            _gameActive = false;
+            
+            ShowIntro();
+            Persistent.Instance.showIntro = false;
+        } else {
+            _gameActive = true;
+        }
     }
 
     private void FindComponents() {
@@ -70,10 +80,8 @@ public class GameMode : MonoBehaviour {
 
         if (this.timeLeft < 0) {
             if (_targetsHit == 0) {
-                Debug.Log("Good ending");
                 EndGame(this.goodEnding);
             } else {
-                Debug.Log("Time ending");
                 EndGame(this.timeEnding);
             }
         }
@@ -121,11 +129,36 @@ public class GameMode : MonoBehaviour {
         }
     }
 
+    public void OnRetry() {
+        if (_introActive) {
+            StartGame();
+        } else {
+            Restart();
+        }
+    }
+
+    /// <summary>
+    /// Show the intro screen.
+    /// </summary>
+    private void ShowIntro() {
+        _camera.ToggleLineMode(true, true);
+        _hud.ToggleIntro(true);
+    }
+
+    /// <summary>
+    /// Start the game.
+    /// </summary>
+    private void StartGame() {
+        _hud.ToggleIntro(false);
+        _camera.ToggleLineMode(false);
+        _gameActive = true;
+        _introActive = false;
+    }
+
     /// <summary>
     /// Trigger bad ending after clearing target goal.
     /// </summary>
     private void WinGame() {
-        Debug.Log("Bad ending");
         _core.Kill();
         _hud.FlashScreen();
         EndGame(this.badEnding);
@@ -152,7 +185,7 @@ public class GameMode : MonoBehaviour {
     /// Kill the player and end the game.
     /// </summary>
     public void KillPlayer() {
-        Debug.Log("Death ending");
+        _camera.Shake();
         EndGame(this.deathEnding);
     }
 

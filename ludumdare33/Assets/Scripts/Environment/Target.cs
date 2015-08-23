@@ -19,7 +19,6 @@ public class Target : MonoBehaviour {
 
     void Awake() {
         FindComponents();
-        Debug.Log(_shards);
     }
 
     private void FindComponents() {

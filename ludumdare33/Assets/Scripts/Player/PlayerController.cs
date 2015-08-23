@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour {
         bool retryButton = Input.GetButtonDown("Retry");
 
         if (retryButton) {
-            GameMode.Instance.Restart();
+            GameMode.Instance.OnRetry();
         }
     }
 }

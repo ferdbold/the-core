@@ -42,7 +42,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLeft: 30
-  targetGoal: 6
+  targetGoal: 8
   targetPrefab: {fileID: 152258, guid: 578e3c6f0bae18046b12aad96b1901a5, type: 2}
   targetSpawnInterval: 2
   targetLifeSpan: 5
@@ -86,6 +86,10 @@ MonoBehaviour:
     - Object: {fileID: 489816}
       ObjeckLink: 1050737996
       PropertyPath: m_RootOrder
+      Mode: 0
+    - Object: {fileID: 11411234}
+      ObjeckLink: -846025902
+      PropertyPath: targetGoal
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []

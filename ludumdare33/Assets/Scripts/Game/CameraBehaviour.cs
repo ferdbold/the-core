@@ -85,11 +85,16 @@ public class CameraBehaviour : MonoBehaviour {
     /// Toggles on and off the line-only render mode.
     /// </summary>
     /// <param name="on">Whether to turn it on of off</param>
-    public void ToggleLineMode(bool on) {
-        if (on) {
-            DOTween.To(()=> _edgeDetection.edgesOnly, x => _edgeDetection.edgesOnly = x, 1.0f, 1.0f);
+    /// <param name="immediate">Whether to immediately apply the effect or not</param>
+    public void ToggleLineMode(bool on, bool immediate = false) {
+        if (!immediate) {
+            if (on) {
+                DOTween.To(()=> _edgeDetection.edgesOnly, x => _edgeDetection.edgesOnly = x, 1.0f, 1.0f);
+            } else {
+                DOTween.To(()=> _edgeDetection.edgesOnly, x => _edgeDetection.edgesOnly = x, 0.0f, 1.0f);
+            }
         } else {
-            DOTween.To(()=> _edgeDetection.edgesOnly, x => _edgeDetection.edgesOnly = x, 0.0f, 1.0f);
+            _edgeDetection.edgesOnly = on ? 1.0f : 0.0f;
         }
     }
 
