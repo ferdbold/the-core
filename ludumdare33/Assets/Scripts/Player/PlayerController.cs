@@ -52,4 +52,8 @@ public class PlayerController : MonoBehaviour {
             _character.Fire();
         }
     }
+
+    private void OnTriggerEnter(Collider other) {
+        Debug.Log("Ca marche");
+    }
 }

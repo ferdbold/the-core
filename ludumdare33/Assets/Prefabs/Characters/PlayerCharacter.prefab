@@ -44,7 +44,6 @@ GameObject:
   - 124: {fileID: 12491286}
   - 92: {fileID: 9251940}
   - 81: {fileID: 8123970}
-  - 45: {fileID: 4555886}
   - 114: {fileID: 11438616}
   m_Layer: 0
   m_Name: Camera
@@ -84,7 +83,6 @@ GameObject:
   - 54: {fileID: 5422862}
   - 198: {fileID: 19869340}
   - 199: {fileID: 19975124}
-  - 111: {fileID: 11146110}
   m_Layer: 0
   m_Name: Pawn
   m_TagString: Untagged
@@ -220,14 +218,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 178250}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!45 &4555886
-Skybox:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 146190}
-  m_Enabled: 1
-  m_CustomSkybox: {fileID: 2100000, guid: ab675e6698bde46fd87143fb0d7580cb, type: 2}
 --- !u!54 &5422862
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -269,21 +259,6 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146190}
   m_Enabled: 1
---- !u!111 &11146110
-Animation:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 178250}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 0}
-  m_Animations:
-  - {fileID: 0}
-  m_WrapMode: 0
-  m_PlayAutomatically: 0
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &11412580
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -324,7 +299,7 @@ MonoBehaviour:
     - LIIF: -1853659070
       InstanceTarget: {fileID: 11438616}
     - LIIF: -1081279772
-      InstanceTarget: {fileID: 4555886}
+      InstanceTarget: {fileID: 0}
   Modifications:
     Modificated:
     - Object: {fileID: 471796}
@@ -337,7 +312,7 @@ MonoBehaviour:
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
-    RemovedObjects: 
+    RemovedObjects: e4fa8cbf
     TransformParentChanges: []
   ParentPrefabGUID: 
   PrefabGUID: 9a14ced7e0ca3b845980f30ab9abd57a
@@ -384,8 +359,6 @@ MonoBehaviour:
       InstanceTarget: {fileID: 471796}
     - LIIF: 172906108
       InstanceTarget: {fileID: 174742}
-    - LIIF: 2041748278
-      InstanceTarget: {fileID: 4555886}
     - LIIF: -658833077
       InstanceTarget: {fileID: 2048006}
     - LIIF: 123640534
@@ -410,79 +383,11 @@ MonoBehaviour:
       InstanceTarget: {fileID: 19975124}
     - LIIF: 1104329768
       InstanceTarget: {fileID: 19869340}
-    - LIIF: -198520265
-      InstanceTarget: {fileID: 11146110}
   Modifications:
-    Modificated:
-    - Object: {fileID: 412256}
-      ObjeckLink: 230024455
-      PropertyPath: m_LocalPosition
-      Mode: 0
-    - Object: {fileID: 420346}
-      ObjeckLink: 19080066
-      PropertyPath: m_LocalRotation
-      Mode: 0
-    - Object: {fileID: 11488790}
-      ObjeckLink: -767638800
-      PropertyPath: maxSpeed
-      Mode: 0
-    - Object: {fileID: 11488790}
-      ObjeckLink: -767638800
-      PropertyPath: decay
-      Mode: 0
-    - Object: {fileID: 11488790}
-      ObjeckLink: -767638800
-      PropertyPath: deadZone
-      Mode: 0
-    - Object: {fileID: 11488790}
-      ObjeckLink: -767638800
-      PropertyPath: gravity
-      Mode: 0
-    - Object: {fileID: 11488790}
-      ObjeckLink: -767638800
-      PropertyPath: jumpPower
-      Mode: 0
-    - Object: {fileID: 11488790}
-      ObjeckLink: -767638800
-      PropertyPath: projectilePrefab
-      Mode: 0
-    - Object: {fileID: 11488790}
-      ObjeckLink: -767638800
-      PropertyPath: fireAnimKickback
-      Mode: 0
-    - Object: {fileID: 11488790}
-      ObjeckLink: -767638800
-      PropertyPath: fireAnimDuration
-      Mode: 0
-    - Object: {fileID: 471796}
-      ObjeckLink: -1600711326
-      PropertyPath: m_LocalPosition
-      Mode: 0
-    - Object: {fileID: 174742}
-      ObjeckLink: 172906108
-      PropertyPath: m_Name
-      Mode: 0
-    - Object: {fileID: 174742}
-      ObjeckLink: 172906108
-      PropertyPath: m_TagString
-      Mode: 0
-    NonPrefabObjects:
-    - child: {fileID: 406070}
-      parent: {fileID: 471796}
-    NonPrefabComponents:
-    - child: {fileID: 11438862}
-      parent: {fileID: 174742}
-    - child: {fileID: 11412580}
-      parent: {fileID: 174742}
-    - child: {fileID: 5422862}
-      parent: {fileID: 178250}
-    - child: {fileID: 19975124}
-      parent: {fileID: 178250}
-    - child: {fileID: 19869340}
-      parent: {fileID: 178250}
-    - child: {fileID: 11146110}
-      parent: {fileID: 178250}
-    RemovedObjects: 57caea49d2f6cb7906dd679b8b736de7accddb8b18a9bd4ae139ffd49e24b9784dd8ae71c268d8c3
+    Modificated: []
+    NonPrefabObjects: []
+    NonPrefabComponents: []
+    RemovedObjects: 369bb279
     TransformParentChanges: []
   ParentPrefabGUID: 
   PrefabGUID: 31a9fb8d0fffe584dad54e40f44978d2

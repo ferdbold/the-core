@@ -16,4 +16,11 @@ public class Projectile : MonoBehaviour {
     private void Move() {
         transform.Translate(Vector3.forward * this.moveSpeed * Time.deltaTime);
     }
+
+    /* COMPONENTS */
+
+    public float MoveSpeed {
+        get { return this.moveSpeed; }
+        set { this.moveSpeed = value; }
+    }
 }
