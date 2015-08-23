@@ -30,17 +30,23 @@ public class Target : MonoBehaviour {
         _timeElapsed += Time.deltaTime;
 
         if (_timeElapsed > _lifeSpan) {
-            GameObject.Destroy(gameObject, 0.35f);
-            _animation.Play();
+            StartCoroutine(Disappear());
         }
 
         if (!GameMode.Instance.GameIsActive) {
-            _particles.Stop();
+            StartCoroutine(Disappear());
         }
     }
 
-    void OnHit() {
+    public void OnHit() {
         Debug.Log("Hit");
+    }
+
+    private IEnumerator Disappear() {
+        _particles.Stop();
+        yield return new WaitForSeconds(2.0f);
+        GameObject.Destroy(gameObject, 0.35f);
+        _animation.Play();
     }
 
     /* COMPONENTS */
