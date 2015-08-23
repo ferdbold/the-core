@@ -39,8 +39,6 @@ public class ClockWidget : MonoBehaviour {
         float delta = 180.0f - Mathf.Abs(playerPos - 180);
         float alpha = delta / 180.0f * 0.25f;
         
-        Debug.Log(alpha);
-
         color.a = alpha;
         _background.color = color; 
     }
