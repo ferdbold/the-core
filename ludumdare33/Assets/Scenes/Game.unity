@@ -126,6 +126,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11411234, guid: 9b1d20b59b583954c9e7ee5e3be5030a, type: 2}
+      propertyPath: targetGoal
+      value: 3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9b1d20b59b583954c9e7ee5e3be5030a, type: 2}
   m_IsPrefabParent: 0
@@ -1027,6 +1031,14 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 420346, guid: 31a9fb8d0fffe584dad54e40f44978d2, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: -.133986205
+      objectReference: {fileID: 0}
+    - target: {fileID: 420346, guid: 31a9fb8d0fffe584dad54e40f44978d2, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: .990983188
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 31a9fb8d0fffe584dad54e40f44978d2, type: 2}
   m_IsPrefabParent: 0
@@ -1113,9 +1125,13 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 138422, guid: 834f48ed392890f46903f3d720d90773, type: 2}
+    - target: {fileID: 135128, guid: 834f48ed392890f46903f3d720d90773, type: 2}
       propertyPath: m_Name
-      value: Targets
+      value: Background
+      objectReference: {fileID: 0}
+    - target: {fileID: 11485016, guid: 834f48ed392890f46903f3d720d90773, type: 2}
+      propertyPath: m_Color.a
+      value: .196078435
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 834f48ed392890f46903f3d720d90773, type: 2}

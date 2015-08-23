@@ -4,11 +4,13 @@ using System.Collections;
 public class PlayerController : MonoBehaviour {
 
     /* COMPONENTS */
+
     private CameraBehaviour _camera;
     private PlayerCharacter _character;
 
     /* CONSTRUCTOR */
-	void Awake() {
+	
+    void Awake() {
         FindComponents();
     }
 
@@ -22,6 +24,7 @@ public class PlayerController : MonoBehaviour {
     }
 	
     /* METHODS */
+
 	void Update() {
         if (GameMode.Instance.GameIsActive) {
             ApplyMoveInput();

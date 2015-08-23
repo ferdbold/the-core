@@ -7,6 +7,7 @@ public class HUD : MonoBehaviour {
 
     private ClockWidget _clock;
     private GameOverWidget _gameOver;
+    private TargetWidget _targets;
 
     /* CONSTRUCTOR */
 
@@ -17,6 +18,7 @@ public class HUD : MonoBehaviour {
     private void FindComponents() {
         _clock = transform.Find("Clock").GetComponent<ClockWidget>();
         _gameOver = transform.Find("GameOver").GetComponent<GameOverWidget>();
+        _targets = transform.Find("Targets").GetComponent<TargetWidget>();
     }
 
     /* METHODS */
@@ -30,9 +32,19 @@ public class HUD : MonoBehaviour {
     }
 
     /// <summary>
+    /// Set the amount of targets hit on the UI.
+    /// </summary>
+    /// <param name="amount">The amount of targets hit</param>
+    public void SetTargetsHit(int amount) {
+        _targets.TargetsHit = amount;
+    }
+
+    /// <summary>
     /// Display game over UI.
     /// </summary>
-    public void OnGameEnd() {
+    /// <param name="message">The message to display to the user.</param>
+    public void EndGame(string message) {
+        _gameOver.EndingMessage = message;
         _gameOver.Toggle(true);
     }
 }

@@ -24,7 +24,7 @@ public class Character : MonoBehaviour {
 
     /* COMPONENTS */
 
-    private Transform _pivot;
+    protected Transform _pivot;
     protected Transform _pawn;
 
     /* ATTRIBUTES */
@@ -35,7 +35,7 @@ public class Character : MonoBehaviour {
 
     /* CONSTRUCTOR */
 
-    void Awake() {
+    public virtual void Awake() {
         FindComponents();
 	}
 

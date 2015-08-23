@@ -42,6 +42,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLeft: 30
+  targetGoal: 6
   targetPrefab: {fileID: 152258, guid: 578e3c6f0bae18046b12aad96b1901a5, type: 2}
   targetSpawnInterval: 2
   targetLifeSpan: 5
@@ -49,6 +50,10 @@ MonoBehaviour:
   - .100000001
   - .899999976
   - 1.70000005
+  deathEnding: You got hit by the core's guardians.
+  timeEnding: You ran out of time.
+  badEnding: You destroyed the core. You monster.
+  goodEnding: You spared the core. Maybe you're not such a monster after all.
 --- !u!114 &11474156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -84,7 +89,7 @@ MonoBehaviour:
       Mode: 0
     - Object: {fileID: 11411234}
       ObjeckLink: -846025902
-      PropertyPath: targetSpawnInterval
+      PropertyPath: goodEnding
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []

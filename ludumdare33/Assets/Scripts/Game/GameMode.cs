@@ -6,13 +6,21 @@ public class GameMode : MonoBehaviour {
 
     /* PUBLIC ATTRIBUTES */
 
+    [Header("Rules")]
     public float timeLeft = 30.0f;
+    public int targetGoal = 6;
 
     [Header("Target Spawn")]
     public GameObject targetPrefab;
     public float targetSpawnInterval = 2.0f;
     public float targetLifeSpan = 5.0f;
     public float[] heights;
+
+    [Header("Messages")]
+    public string deathEnding;
+    public string timeEnding;
+    public string badEnding;
+    public string goodEnding;
 
     /* COMPONENTS */
 
@@ -24,6 +32,7 @@ public class GameMode : MonoBehaviour {
     private static GameMode _instance;
     private float _timeUntilSpawn = 0;
     private bool _gameActive = false;
+    private int _targetsHit = 0;
 
     /* CONSTRUCTOR */
 
@@ -58,8 +67,13 @@ public class GameMode : MonoBehaviour {
         _hud.SetClock(this.timeLeft);
 
         if (this.timeLeft < 0) {
-            Debug.Log("Time is up");
-            EndGame();
+            if (_targetsHit == 0) {
+                Debug.Log("Good ending");
+                EndGame(this.goodEnding);
+            } else {
+                Debug.Log("Time ending");
+                EndGame(this.timeEnding);
+            }
         }
     }
 
@@ -93,21 +107,40 @@ public class GameMode : MonoBehaviour {
     }
 
     /// <summary>
+    /// Register target hit.
+    /// </summary>
+    public void OnTargetHit() {
+        _targetsHit++;
+        _hud.SetTargetsHit(_targetsHit);
+
+        if (_targetsHit >= this.targetGoal) {
+            WinGame();
+        }
+    }
+
+    /// <summary>
+    /// Win the game.
+    /// </summary>
+    private void WinGame() {
+        Debug.Log("Bad ending");
+        EndGame(this.badEnding);
+    }
+
+    /// <summary>
     /// End the game.
     /// </summary>
-    private void EndGame() {
+    private void EndGame(string message) {
         _gameActive = false;
         _camera.ToggleLineMode(true);
-        _hud.OnGameEnd();
-        Debug.Log("Game over");
+        _hud.EndGame(message);
     }
 
     /// <summary>
     /// Kill the player and end the game.
     /// </summary>
     public void KillPlayer() {
-        Debug.Log("Player died");
-        EndGame();
+        Debug.Log("Death ending");
+        EndGame(this.deathEnding);
     }
 
     /// <summary>

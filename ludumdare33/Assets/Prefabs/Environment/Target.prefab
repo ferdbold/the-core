@@ -236,19 +236,7 @@ MonoBehaviour:
     - LIIF: 1514803334
       InstanceTarget: {fileID: 123248}
   Modifications:
-    Modificated:
-    - Object: {fileID: 475702}
-      ObjeckLink: -2037902440
-      PropertyPath: m_RootOrder
-      Mode: 0
-    - Object: {fileID: 19857774}
-      ObjeckLink: -1696895768
-      PropertyPath: looping
-      Mode: 0
-    - Object: {fileID: 19857774}
-      ObjeckLink: -1696895768
-      PropertyPath: InitialModule.gravityModifier
-      Mode: 0
+    Modificated: []
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 
@@ -1337,7 +1325,7 @@ ParticleSystem:
   startDelay: 0
   speed: 1
   randomSeed: 0
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   moveWithTransform: 1

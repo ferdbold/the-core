@@ -8,6 +8,7 @@ public class GameOverWidget : MonoBehaviour {
     /* COMPONENTS */
 
     private Text _titleText;
+    private Text _endingText;
     private Text _retryText;
 
     /* ATTRIBUTES */
@@ -22,20 +23,20 @@ public class GameOverWidget : MonoBehaviour {
 
     private void FindComponents() {
         _titleText = transform.Find("TitleText").GetComponent<Text>();
+        _endingText = transform.Find("EndingText").GetComponent<Text>();
         _retryText = transform.Find("RetryText").GetComponent<Text>();
     }
 
     /* METHODS */
 
     void Update() {
-        Color titleColor = _titleText.color;
-        Color retryColor = _retryText.color;
+        Color color = _titleText.color;
 
-        titleColor.a = _textAlpha;
-        retryColor.a = _textAlpha;
+        color.a = _textAlpha;
 
-        _titleText.color = titleColor;
-        _retryText.color = retryColor;
+        _titleText.color = color;
+        _retryText.color = color;
+        _endingText.color = color;
     }
 
     /// <summary>
@@ -48,5 +49,11 @@ public class GameOverWidget : MonoBehaviour {
         } else {
             DOTween.To(() => _textAlpha, x => _textAlpha = x, 0.0f, 1.5f);
         }
+    }
+
+    /* PROPERTIES */
+
+    public string EndingMessage {
+        set { _endingText.text = value; }
     }
 }

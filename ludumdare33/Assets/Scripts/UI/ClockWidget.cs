@@ -9,6 +9,7 @@ public class ClockWidget : MonoBehaviour {
 
     private Text _timeLeftText;
     private RectTransform _dotPivot;
+    private Image _background;
 
     /* ATTRIBUTES */
 
@@ -23,6 +24,25 @@ public class ClockWidget : MonoBehaviour {
     private void FindComponents() {
         _timeLeftText = transform.Find("TimeLeft").GetComponent<Text>();
         _dotPivot = transform.Find("DotPivot").GetComponent<RectTransform>();
+        _background = transform.Find("Background").GetComponent<Image>();
+    }
+
+    /* METHODS */
+
+    void Update() {
+        RefreshBackgroundColor();
+    }
+
+    private void RefreshBackgroundColor() {
+        Color color = _background.color;
+        float playerPos = PlayerCharacter.Instance.PlayerPosition;
+        float delta = 180.0f - Mathf.Abs(playerPos - 180);
+        float alpha = delta / 180.0f * 0.25f;
+        
+        Debug.Log(alpha);
+
+        color.a = alpha;
+        _background.color = color; 
     }
 
     private void PlayTickingEmphasis() {

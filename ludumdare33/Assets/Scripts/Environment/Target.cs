@@ -45,6 +45,7 @@ public class Target : MonoBehaviour {
     public void OnHit() {
         if (!_hit) {
             _hit = true;
+            GameMode.Instance.OnTargetHit();
             StartCoroutine(Die());
         }
     }
