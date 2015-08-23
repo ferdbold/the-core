@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Timers;
+using DG.Tweening;
 
 public class GameMode : MonoBehaviour {
 
@@ -22,11 +23,15 @@ public class GameMode : MonoBehaviour {
     public string badEnding;
     public string goodEnding;
 
+    [Header("Audio")]
+    public AudioClip clearSound;
+
     /* COMPONENTS */
 
     private HUD _hud;
     private CameraBehaviour _camera;
     private Core _core;
+    private AudioSource _audio;
 
     /* ATTRIBUTES */
 
@@ -60,6 +65,7 @@ public class GameMode : MonoBehaviour {
         _hud = GameObject.FindWithTag("HUD").GetComponent<HUD>();
         _camera = GameObject.FindWithTag("MainCamera").GetComponent<CameraBehaviour>();
         _core = GameObject.FindWithTag("Core").GetComponent<Core>();
+        _audio = GetComponent<AudioSource>();
     }
 	
     /* METHODS */
@@ -69,6 +75,8 @@ public class GameMode : MonoBehaviour {
             TickClock();
             TickSpawn();
         }
+
+        Debug.Log(Time.timeScale);
     }
 
     /// <summary>
@@ -80,6 +88,7 @@ public class GameMode : MonoBehaviour {
 
         if (this.timeLeft < 0) {
             if (_targetsHit == 0) {
+                _audio.PlayOneShot(this.clearSound);
                 EndGame(this.goodEnding);
             } else {
                 EndGame(this.timeEnding);
@@ -193,7 +202,9 @@ public class GameMode : MonoBehaviour {
     /// Restart the game.
     /// </summary>
     public void Restart() {
+        DOTween.KillAll();
         Time.timeScale = 1.0f;
+
         Application.LoadLevel("Game");
     }
 

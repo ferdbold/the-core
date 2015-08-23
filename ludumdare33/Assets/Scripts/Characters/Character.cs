@@ -85,7 +85,7 @@ public class Character : MonoBehaviour {
     /// <summary>
     /// Apply a vertical force when jumping.
     /// </summary>
-    public void Jump() {
+    public virtual void Jump() {
         if (!IsJumping) {
             Rigidbody pawnRb = _pawn.GetComponent<Rigidbody>();
             pawnRb.AddForce(transform.up * this.jumpPower);
@@ -95,7 +95,7 @@ public class Character : MonoBehaviour {
     /// <summary>
     /// Fire a projectile.
     /// </summary>
-    public void Fire() {
+    public virtual void Fire() {
         Instantiate(this.projectilePrefab, _pawn.position, _pawn.rotation);
 
         
@@ -115,7 +115,7 @@ public class Character : MonoBehaviour {
 
     /* PROPERTIES */
 
-    private bool IsJumping {
+    protected bool IsJumping {
         get {
             return !Physics.Raycast(_pawn.position, -Vector3.up, _pawnDistToGround + 0.1f);
         }

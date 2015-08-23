@@ -4,10 +4,16 @@ using DG.Tweening;
 
 public class Core : MonoBehaviour {
 
+    /* PUBLIC ATTRIBUTES */
+
+    [Header("Audio")]
+    public AudioClip killSound;
+
     /* COMPONENTS */
 
     private Animation _animation;
     private ParticleSystem _shards;
+    private AudioSource _audio;
 
     /* CONSTRUCTOR */
 
@@ -18,6 +24,7 @@ public class Core : MonoBehaviour {
     private void FindComponents() {
         _animation = GetComponent<Animation>();
         _shards = GetComponent<ParticleSystem>();
+        _audio = GetComponent<AudioSource>();
     }
 
     /* METHODS */
@@ -34,6 +41,8 @@ public class Core : MonoBehaviour {
     public void Kill() {
         _animation.Play();
         _shards.Play();
+
+        _audio.PlayOneShot(this.killSound);
 
         // Slowo effect
         DOTween.To(() => Time.timeScale, x => Time.timeScale = x, 0.1f, 1.5f);

@@ -28,6 +28,7 @@ GameObject:
   - 114: {fileID: 11483456}
   - 114: {fileID: 11403604}
   - 111: {fileID: 11156000}
+  - 82: {fileID: 8221938}
   m_Layer: 0
   m_Name: Target
   m_TagString: Untagged
@@ -153,6 +154,75 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 164440}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!82 &8221938
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 152258}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!111 &11156000
 Animation:
   m_ObjectHideFlags: 1
@@ -180,6 +250,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ac975af67280a9428c9fe9d714430a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  killSound: {fileID: 8300000, guid: 875ac0078aa1ef242bae388d0a045a60, type: 3}
 --- !u!114 &11483456
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -235,6 +306,8 @@ MonoBehaviour:
       InstanceTarget: {fileID: 491676}
     - LIIF: 1514803334
       InstanceTarget: {fileID: 123248}
+    - LIIF: 1463665279
+      InstanceTarget: {fileID: 8221938}
   Modifications:
     Modificated: []
     NonPrefabObjects: []
@@ -2429,6 +2502,10 @@ Prefab:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: killSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 875ac0078aa1ef242bae388d0a045a60, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 152258}

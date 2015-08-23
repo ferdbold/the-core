@@ -2,7 +2,14 @@
 using System.Collections;
 
 public class PlayerCharacter : Character {
-    
+
+    /* PUBLIC ATTRIBUTES */
+
+    [Header("Audio")]
+    public AudioClip jumpSound;
+    public AudioClip fireSound;
+    public AudioClip enemyCollisionSound;
+
     /* ATTRIBUTES */
 
     private static PlayerCharacter _instance;
@@ -10,6 +17,7 @@ public class PlayerCharacter : Character {
     /* COMPONENTS */
 
     private ParticleSystem _reticle;
+    private AudioSource _audio;
 
     /* CONSTRUCTOR */
 
@@ -23,6 +31,7 @@ public class PlayerCharacter : Character {
         base.FindComponents();
 
         _reticle = _pawn.GetComponent<ParticleSystem>();
+        _audio = _pawn.GetComponent<AudioSource>();
     }
 
     /* METHODS */
@@ -35,9 +44,24 @@ public class PlayerCharacter : Character {
         }
     }
 
+    public override void Jump() {
+        base.Jump();
+
+        if (!IsJumping) {
+            _audio.PlayOneShot(this.jumpSound);
+        }
+    }
+
+    public override void Fire() {
+        base.Fire();
+
+        _audio.PlayOneShot(this.fireSound);
+    }
+
     void OnTriggerEnter(Collider other) {
         if (LayerMask.NameToLayer("Enemy") == other.gameObject.layer) {
             GameMode.Instance.KillPlayer();
+            _audio.PlayOneShot(this.enemyCollisionSound);
         }
     }
 

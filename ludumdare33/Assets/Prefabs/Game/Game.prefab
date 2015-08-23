@@ -87,10 +87,6 @@ MonoBehaviour:
       ObjeckLink: 1050737996
       PropertyPath: m_RootOrder
       Mode: 0
-    - Object: {fileID: 11411234}
-      ObjeckLink: -846025902
-      PropertyPath: targetGoal
-      Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
     RemovedObjects: 

@@ -104,6 +104,7 @@ GameObject:
   - 198: {fileID: 19869340}
   - 199: {fileID: 19975124}
   - 114: {fileID: 11466580}
+  - 82: {fileID: 8223938}
   m_Layer: 0
   m_Name: Pawn
   m_TagString: Untagged
@@ -154,7 +155,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 139770}
-  m_LocalRotation: {x: 0, y: -.0788070932, z: 0, w: .996889889}
+  m_LocalRotation: {x: 0, y: -.133986205, z: 0, w: .990983188}
   m_LocalPosition: {x: 0, y: .0850000009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -286,6 +287,75 @@ AudioListener:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 146190}
   m_Enabled: 1
+--- !u!82 &8223938
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 178250}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!92 &9251940
 Behaviour:
   m_ObjectHideFlags: 1
@@ -443,11 +513,13 @@ MonoBehaviour:
       InstanceTarget: {fileID: 404674}
     - LIIF: -1990654697
       InstanceTarget: {fileID: 109492}
+    - LIIF: 2000735336
+      InstanceTarget: {fileID: 8223938}
   Modifications:
     Modificated:
-    - Object: {fileID: 19873752}
-      ObjeckLink: -538966812
-      PropertyPath: InitialModule.startLifetime.scalar
+    - Object: {fileID: 11488790}
+      ObjeckLink: -767638800
+      PropertyPath: enemyCollisionSound
       Mode: 0
     NonPrefabObjects: []
     NonPrefabComponents: []
@@ -614,6 +686,9 @@ MonoBehaviour:
   projectilePrefab: {fileID: 411256, guid: 95ae228ca538f8542981f0885ee8394c, type: 2}
   fireAnimKickback: .300000012
   fireAnimDuration: .150000006
+  jumpSound: {fileID: 8300000, guid: b590b72c6f49ee3408d607d42a724f55, type: 3}
+  fireSound: {fileID: 8300000, guid: eb653e0700d379f4fb0b2d364752aedb, type: 3}
+  enemyCollisionSound: {fileID: 8300000, guid: d6b89080ff10234498b5a1ed21e5914f, type: 3}
 --- !u!124 &12491286
 Behaviour:
   m_ObjectHideFlags: 1

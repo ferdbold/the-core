@@ -3,6 +3,10 @@ using System.Collections;
 
 public class Target : MonoBehaviour {
 
+    /* PUBLIC ATTRIBUTES */
+    [Header("Audio")]
+    public AudioClip killSound;
+
     /* ATTRIBUTES */
 
     private float _lifeSpan;
@@ -14,6 +18,7 @@ public class Target : MonoBehaviour {
     private Animation _animation;
     private ParticleSystem _centeringParticles;
     private ParticleSystem _shards;
+    private AudioSource _audio;
 
     /* CONSTRUCTOR */
 
@@ -25,6 +30,7 @@ public class Target : MonoBehaviour {
         _animation = GetComponent<Animation>();
         _centeringParticles = transform.Find("Target").GetComponent<ParticleSystem>();
         _shards = transform.Find("Target").Find("Shards").GetComponent<ParticleSystem>();
+        _audio = GetComponent<AudioSource>();
     }
 
     /* METHODS */
@@ -59,12 +65,12 @@ public class Target : MonoBehaviour {
     }
 
     private IEnumerator Die() {
-        Debug.Log("Die");
-        
         _animation.Play("TargetKill");
         
         _centeringParticles.Stop();
         _shards.Play();
+
+        _audio.PlayOneShot(this.killSound);
         
         yield return new WaitForSeconds(2.0f);
 
