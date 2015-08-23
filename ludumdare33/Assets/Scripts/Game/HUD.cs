@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
+using DG.Tweening;
 
 public class HUD : MonoBehaviour {
 
@@ -8,6 +10,11 @@ public class HUD : MonoBehaviour {
     private ClockWidget _clock;
     private GameOverWidget _gameOver;
     private TargetWidget _targets;
+    private Image _flash;
+
+    /* ATTRIBUTES */
+
+    private float _flashAlpha = 0.0f;
 
     /* CONSTRUCTOR */
 
@@ -19,9 +26,21 @@ public class HUD : MonoBehaviour {
         _clock = transform.Find("Clock").GetComponent<ClockWidget>();
         _gameOver = transform.Find("GameOver").GetComponent<GameOverWidget>();
         _targets = transform.Find("Targets").GetComponent<TargetWidget>();
+        _flash = GetComponent<Image>();
     }
 
     /* METHODS */
+
+    void Update() {
+        ApplyFlash();
+    }
+
+    private void ApplyFlash() {
+        Color color = _flash.color;
+        color.a = _flashAlpha;
+
+        _flash.color = color;
+    }
 
     /// <summary>
     /// Set the game clock to a certain number.
@@ -46,5 +65,14 @@ public class HUD : MonoBehaviour {
     public void EndGame(string message) {
         _gameOver.EndingMessage = message;
         _gameOver.Toggle(true);
+    }
+
+    /// <summary>
+    /// Flash the screen.
+    /// </summary>
+    public void FlashScreen() {
+        _flashAlpha = 1.0f;
+
+        DOTween.To(() => _flashAlpha, x => _flashAlpha = x, 0.0f, 0.5f);
     }
 }

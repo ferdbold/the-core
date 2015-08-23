@@ -28,9 +28,10 @@ GameObject:
   - 114: {fileID: 11433052}
   - 114: {fileID: 11478524}
   - 136: {fileID: 13639352}
+  - 111: {fileID: 11113784}
   m_Layer: 0
   m_Name: Core
-  m_TagString: Untagged
+  m_TagString: Core
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -91,6 +92,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 128492}
   m_Mesh: {fileID: 4300000, guid: 729d02ab8c0ce9944853957c9ea89de6, type: 3}
+--- !u!111 &11113784
+Animation:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 133884}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: 2340e5814a257754e8977e192ace56c0, type: 2}
+  m_Animations:
+  - {fileID: 7400000, guid: 2340e5814a257754e8977e192ace56c0, type: 2}
+  m_WrapMode: 0
+  m_PlayAutomatically: 0
+  m_AnimatePhysics: 0
+  m_CullingType: 0
 --- !u!114 &11433052
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -126,17 +142,21 @@ MonoBehaviour:
       InstanceTarget: {fileID: 11478524}
     - LIIF: 1895360714
       InstanceTarget: {fileID: 13639352}
+    - LIIF: -396836771
+      InstanceTarget: {fileID: 11113784}
   Modifications:
     Modificated:
     - Object: {fileID: 478394}
       ObjeckLink: -765337030
       PropertyPath: m_RootOrder
       Mode: 0
+    - Object: {fileID: 133884}
+      ObjeckLink: -233967762
+      PropertyPath: m_TagString
+      Mode: 0
     NonPrefabObjects: []
-    NonPrefabComponents:
-    - child: {fileID: 13639352}
-      parent: {fileID: 133884}
-    RemovedObjects: 43b74d11
+    NonPrefabComponents: []
+    RemovedObjects: 
     TransformParentChanges: []
   ParentPrefabGUID: 
   PrefabGUID: 71dc05aceea10db46886a94f0981833d

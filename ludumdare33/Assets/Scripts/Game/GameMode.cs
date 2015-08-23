@@ -26,6 +26,7 @@ public class GameMode : MonoBehaviour {
 
     private HUD _hud;
     private CameraBehaviour _camera;
+    private Core _core;
 
     /* ATTRIBUTES */
 
@@ -48,6 +49,7 @@ public class GameMode : MonoBehaviour {
     private void FindComponents() {
         _hud = GameObject.FindWithTag("HUD").GetComponent<HUD>();
         _camera = GameObject.FindWithTag("MainCamera").GetComponent<CameraBehaviour>();
+        _core = GameObject.FindWithTag("Core").GetComponent<Core>();
     }
 	
     /* METHODS */
@@ -119,10 +121,12 @@ public class GameMode : MonoBehaviour {
     }
 
     /// <summary>
-    /// Win the game.
+    /// Trigger bad ending after clearing target goal.
     /// </summary>
     private void WinGame() {
         Debug.Log("Bad ending");
+        _core.Kill();
+        _hud.FlashScreen();
         EndGame(this.badEnding);
     }
 
@@ -131,6 +135,14 @@ public class GameMode : MonoBehaviour {
     /// </summary>
     private void EndGame(string message) {
         _gameActive = false;
+        StartCoroutine(ShowGameOverScreen(message, message == this.badEnding));
+    }
+
+    private IEnumerator ShowGameOverScreen(string message, bool wait) {
+        if (wait) {
+            yield return new WaitForSeconds(0.8f);
+        }
+
         _camera.ToggleLineMode(true);
         _hud.EndGame(message);
     }
@@ -147,6 +159,7 @@ public class GameMode : MonoBehaviour {
     /// Restart the game.
     /// </summary>
     public void Restart() {
+        Time.timeScale = 1.0f;
         Application.LoadLevel("Game");
     }
 
