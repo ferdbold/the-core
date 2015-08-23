@@ -86,7 +86,6 @@ public class Character : MonoBehaviour {
     /// Apply a vertical force when jumping.
     /// </summary>
     public void Jump() {
-        Debug.Log(IsJumping);
         if (!IsJumping) {
             Rigidbody pawnRb = _pawn.GetComponent<Rigidbody>();
             pawnRb.AddForce(transform.up * this.jumpPower);
@@ -118,7 +117,6 @@ public class Character : MonoBehaviour {
 
     private bool IsJumping {
         get {
-            Debug.DrawRay(_pawn.position, -Vector3.up * (_pawnDistToGround + 0.1f));
             return !Physics.Raycast(_pawn.position, -Vector3.up, _pawnDistToGround + 0.1f);
         }
     }

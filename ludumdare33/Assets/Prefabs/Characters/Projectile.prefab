@@ -13,6 +13,7 @@ GameObject:
   - 23: {fileID: 2313470}
   - 114: {fileID: 11441852}
   - 114: {fileID: 11413916}
+  - 54: {fileID: 5485908}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -63,6 +64,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 122248}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &5485908
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 122248}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!65 &6580300
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -106,6 +122,8 @@ MonoBehaviour:
       InstanceTarget: {fileID: 6580300}
     - LIIF: 288872413
       InstanceTarget: {fileID: 2313470}
+    - LIIF: -745248218
+      InstanceTarget: {fileID: 5485908}
   Modifications:
     Modificated: []
     NonPrefabObjects: []
@@ -125,7 +143,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2b65d26a31e0594ab914bb5dbef4acd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyLayer: 0
   moveSpeed: 4
 --- !u!1001 &100100000
 Prefab:
@@ -141,6 +158,14 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: moveSpeed
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_UseGravity
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

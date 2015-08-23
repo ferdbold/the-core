@@ -5,9 +5,10 @@ public class Projectile : MonoBehaviour {
 
     /* PUBLIC ATTRIBUTES */
     
-    public int enemyLayer;
     public float moveSpeed = 2.0f;
 	
+    /* METHODS */
+
 	void Update () {
         Move();
 	}
