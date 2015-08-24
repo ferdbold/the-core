@@ -2722,11 +2722,7 @@ Prefab:
 Transform:
   m_PrefabParentObject: {fileID: 437944, guid: cac97e303c14916418b664181844e77a, type: 2}
   m_PrefabInternal: {fileID: 1735703161}
---- !u!4 &1842056016 stripped
-Transform:
-  m_PrefabParentObject: {fileID: 437944, guid: cac97e303c14916418b664181844e77a, type: 2}
-  m_PrefabInternal: {fileID: 535793448}
---- !u!1001 &1912737222
+--- !u!1001 &1765585123
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2808,6 +2804,10 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 834f48ed392890f46903f3d720d90773, type: 2}
   m_IsPrefabParent: 0
+--- !u!4 &1842056016 stripped
+Transform:
+  m_PrefabParentObject: {fileID: 437944, guid: cac97e303c14916418b664181844e77a, type: 2}
+  m_PrefabInternal: {fileID: 535793448}
 --- !u!1001 &1924285297
 Prefab:
   m_ObjectHideFlags: 0

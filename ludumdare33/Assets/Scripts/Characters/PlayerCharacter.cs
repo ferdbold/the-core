@@ -36,14 +36,6 @@ public class PlayerCharacter : Character {
 
     /* METHODS */
 
-    public override void Update() {
- 	    base.Update();
-
-        if (!GameMode.Instance.GameIsActive) {
-            _reticle.Stop();
-        }
-    }
-
     public override void Jump() {
         base.Jump();
 
@@ -56,6 +48,10 @@ public class PlayerCharacter : Character {
         base.Fire();
 
         _audio.PlayOneShot(this.fireSound);
+    }
+
+    public void OnGameEnd() {
+        _reticle.Stop();
     }
 
     void OnTriggerEnter(Collider other) {

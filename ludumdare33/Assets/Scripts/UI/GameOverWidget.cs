@@ -53,7 +53,15 @@ public class GameOverWidget : MonoBehaviour {
 
     /* PROPERTIES */
 
+    public string TitleMessage {
+        set { _titleText.text = value; }
+    }
+
     public string EndingMessage {
         set { _endingText.text = value; }
+    }
+
+    public string RetryMessage {
+        set { _retryText.text = value; }
     }
 }

@@ -75,8 +75,6 @@ public class GameMode : MonoBehaviour {
             TickClock();
             TickSpawn();
         }
-
-        Debug.Log(Time.timeScale);
     }
 
     /// <summary>
@@ -177,7 +175,16 @@ public class GameMode : MonoBehaviour {
     /// End the game.
     /// </summary>
     private void EndGame(string message) {
+        Enemy[] enemies = GameObject.FindObjectsOfType<Enemy>();
+        
         _gameActive = false;
+
+        foreach (Enemy e in enemies) {
+            e.OnGameEnd();
+        }
+
+        PlayerController.Instance.OnGameEnd();
+
         StartCoroutine(ShowGameOverScreen(message, message == this.badEnding));
     }
 

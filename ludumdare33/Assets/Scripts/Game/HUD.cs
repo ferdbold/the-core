@@ -12,6 +12,7 @@ public class HUD : MonoBehaviour {
     private GameOverWidget _gameOver;
     private TargetWidget _targets;
     private Image _flash;
+    private Text _controls;
 
     /* ATTRIBUTES */
 
@@ -29,12 +30,15 @@ public class HUD : MonoBehaviour {
         _gameOver = transform.Find("GameOver").GetComponent<GameOverWidget>();
         _targets = transform.Find("Targets").GetComponent<TargetWidget>();
         _flash = GetComponent<Image>();
+        _controls = transform.Find("Controls").GetComponent<Text>();
     }
 
     /* METHODS */
 
     void Update() {
         ApplyFlash();
+
+        _controls.gameObject.SetActive(GameMode.Instance.GameIsActive);
     }
 
     /// <summary>
@@ -79,6 +83,12 @@ public class HUD : MonoBehaviour {
     /// <param name="message">The message to display to the user.</param>
     public void EndGame(string message) {
         _gameOver.EndingMessage = message;
+
+        // Special message if we're in good ending
+        if (message == GameMode.Instance.goodEnding) {
+            _gameOver.TitleMessage = "thanks for playing";
+        }
+
         _gameOver.Toggle(true);
     }
 

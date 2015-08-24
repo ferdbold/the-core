@@ -11,6 +11,7 @@ GameObject:
   - 114: {fileID: 11474156}
   - 114: {fileID: 11411234}
   - 114: {fileID: 11480740}
+  - 82: {fileID: 8297864}
   m_Layer: 0
   m_Name: Game
   m_TagString: GameController
@@ -30,6 +31,75 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!82 &8297864
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 191690}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!114 &11411234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -42,7 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeLeft: 30
-  targetGoal: 8
+  targetGoal: 7
   targetPrefab: {fileID: 152258, guid: 578e3c6f0bae18046b12aad96b1901a5, type: 2}
   targetSpawnInterval: 2
   targetLifeSpan: 5
@@ -54,6 +124,7 @@ MonoBehaviour:
   timeEnding: You ran out of time.
   badEnding: You destroyed the core. You monster.
   goodEnding: You spared the core. Maybe you're not such a monster after all.
+  clearSound: {fileID: 8300000, guid: 5725ce7026a9c1d4b8a695dda677f019, type: 3}
 --- !u!114 &11474156
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -81,6 +152,8 @@ MonoBehaviour:
       InstanceTarget: {fileID: 11411234}
     - LIIF: 1426508353
       InstanceTarget: {fileID: 11480740}
+    - LIIF: -361854617
+      InstanceTarget: {fileID: 8297864}
   Modifications:
     Modificated:
     - Object: {fileID: 489816}

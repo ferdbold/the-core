@@ -3,6 +3,10 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour {
 
+    /* ATTRIBUTES */
+
+    private static PlayerController _instance;
+
     /* COMPONENTS */
 
     private CameraBehaviour _camera;
@@ -12,6 +16,7 @@ public class PlayerController : MonoBehaviour {
 	
     void Awake() {
         FindComponents();
+        _instance = this;
     }
 
     void Start() {
@@ -66,5 +71,15 @@ public class PlayerController : MonoBehaviour {
         if (retryButton) {
             GameMode.Instance.OnRetry();
         }
+    }
+
+    public void OnGameEnd() {
+        _character.OnGameEnd();
+    }
+
+    /* PROPERTIES */
+
+    public static PlayerController Instance {
+        get { return _instance; }
     }
 }

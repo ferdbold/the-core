@@ -31,8 +31,10 @@ public class Enemy : MonoBehaviour {
                 new Vector3(0, 1, 0),
                 this.moveSpeed * direction * Time.deltaTime
             );
-        } else {
-            _particles.Stop();
         }
+    }
+
+    public void OnGameEnd() {
+        _particles.Stop();
     }
 }
